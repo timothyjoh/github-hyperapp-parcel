@@ -1,7 +1,7 @@
 import { h } from 'hyperapp';
 import { state } from './state';
 
-const view = (state, actions) => (
+export const view = (state, actions) => (
   <section>
     <h3>Search Github Users!</h3>
     <input
@@ -24,5 +24,3 @@ const view = (state, actions) => (
     </div>
   </section>
 );
-
-export { view };

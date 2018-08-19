@@ -445,12 +445,10 @@ function app(state, actions, view, container) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var state = {
+var state = exports.state = {
   username: '',
   userdata: null
 };
-
-exports.state = state;
 },{}],"view.js":[function(require,module,exports) {
 'use strict';
 
@@ -463,7 +461,7 @@ var _hyperapp = require('hyperapp');
 
 var _state = require('./state');
 
-var view = function view(state, actions) {
+var view = exports.view = function view(state, actions) {
   return (0, _hyperapp.h)(
     'section',
     null,
@@ -506,8 +504,6 @@ var view = function view(state, actions) {
     )
   );
 };
-
-exports.view = view;
 },{"hyperapp":"node_modules\\hyperapp\\src\\index.js","./state":"state.js"}],"node_modules\\debounce-promise\\dist\\index.js":[function(require,module,exports) {
 'use strict';
 
@@ -613,7 +609,7 @@ var fetch_userdata = function fetch_userdata(username) {
 };
 var get_userdata = (0, _debouncePromise2.default)(fetch_userdata, 700);
 
-var actions = {
+var actions = exports.actions = {
   update_username: function update_username(username) {
     return function (state, actions) {
       get_userdata(username).then(actions.set_userdata);
@@ -626,8 +622,6 @@ var actions = {
     };
   }
 };
-
-exports.actions = actions;
 },{"debounce-promise":"node_modules\\debounce-promise\\dist\\index.js"}],"app.js":[function(require,module,exports) {
 'use strict';
 
