@@ -1,0 +1,19 @@
+{
+  "name": "github-hyperapp-parcel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhnsntmthy/github-hyperapp-parcel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhnsntmthy/github-hyperapp-parcel/issues"
+  },
+  "homepage": "https://github.com/jhnsntmthy/github-hyperapp-parcel#readme"
+}
