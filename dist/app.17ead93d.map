@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.js"],"names":["alert"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAAA,MAAM,aAAN","file":"app.17ead93d.map","sourceRoot":"..","sourcesContent":["alert(\"hello world\");"]}
