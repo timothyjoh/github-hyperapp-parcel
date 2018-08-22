@@ -1,41 +1,44 @@
-@import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c");
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
 body, * {
   font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-size: 10pt; }
-
+  font-size: 10pt;
+}
 div.inputs, div.tables {
   display: flex;
   justify-content: space-around;
-  align-content: flex-start; }
-
+  align-content: flex-start;
+}
 div.tables table {
-  margin: 2em; }
-
+  margin: 2em;
+}
 div.inputs input {
   padding: 4px 10px;
   border: none;
   border-bottom: 1px dotted #222;
-  min-width: 24em; }
-
+  min-width: 24em;
+}
 table tr td {
-  color: #444; }
-
+  color: #444;
+}
 table tr td.tiny {
-  font-size: 8pt; }
-  table tr td.tiny a {
+  font-size: 8pt;
+  a {
     font-size: 8pt;
-    color: #79c; }
-
+    color: #79c;
+  }
+}
 table td {
   border: 1px solid #ddd;
   padding: 1em 2em;
-  text-align: center; }
-
+  text-align: center;
+}
 table#datatable {
-  max-width: 15em; }
-
+  max-width: 15em;
+}
 table#usertable {
-  max-width: 25%; }
-  table#usertable a {
+  max-width: 25%;
+  a {
     cursor: hand;
-    border-bottom: 1px dotted #555; }
+    border-bottom: 1px dotted #555;
+  }
+}

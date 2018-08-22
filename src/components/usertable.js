@@ -5,7 +5,9 @@ const uniqueUsers = (records) => uniq(pluck("user_id")(records))
 
 const UserRow = ({id, user_select}) => (
   <tr>
-    <td><a onclick={ (e) => user_select(id) }>{id}</a></td>
+    <td class='tiny'>
+      <a onclick={ (e) => user_select(id) }>{id}</a>
+      </td>
   </tr>
 )
 

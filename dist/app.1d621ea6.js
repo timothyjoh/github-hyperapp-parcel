@@ -469,11 +469,9 @@ var pluck = exports.pluck = function pluck(ele) {
     });
   };
 };
-var sortByProp = exports.sortByProp = function sortByProp(prop) {
+var sortByProp = exports.sortByProp = function sortByProp(p) {
   return function (a, b) {
-    if (a[prop] < b[prop]) return -1;
-    if (a[prop] > b[prop]) return 1;
-    return 0;
+    return a[p] < b[p] ? -1 : a[p] > b[p] ? 1 : 0;
   };
 };
 
@@ -527,7 +525,7 @@ var UserRow = function UserRow(_ref) {
     null,
     (0, _hyperapp.h)(
       'td',
-      null,
+      { 'class': 'tiny' },
       (0, _hyperapp.h)(
         'a',
         { onclick: function onclick(e) {
@@ -683,7 +681,63 @@ var DataTable = exports.DataTable = function DataTable(_ref2) {
     )
   );
 };
-},{"hyperapp":"node_modules/hyperapp/src/index.js","../lib/lib":"src/lib/lib.js"}],"src/view.js":[function(require,module,exports) {
+},{"hyperapp":"node_modules/hyperapp/src/index.js","../lib/lib":"src/lib/lib.js"}],"src/components/inputs.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.InputFields = undefined;
+
+var _hyperapp = require('hyperapp');
+
+var TextInput = function TextInput(_ref) {
+  var field = _ref.field,
+      func = _ref.func,
+      init = _ref.init,
+      label = _ref.label;
+  return (0, _hyperapp.h)(
+    'label',
+    { 'for': field,
+      onclick: function onclick(e) {
+        return func(init);
+      }
+    },
+    label,
+    ':\xA0',
+    (0, _hyperapp.h)('input', {
+      name: field,
+      type: 'text',
+      'class': 'input_text',
+      value: init,
+      oninput: function oninput(e) {
+        return func(e.target.value);
+      }
+    })
+  );
+};
+
+var InputFields = exports.InputFields = function InputFields(_ref2) {
+  var state = _ref2.state,
+      actions = _ref2.actions;
+  return (0, _hyperapp.h)(
+    'div',
+    { 'class': 'inputs' },
+    (0, _hyperapp.h)(TextInput, {
+      field: 'activity_id',
+      func: actions.update_activity,
+      init: state.activity_id,
+      label: 'Activity UUID'
+    }),
+    (0, _hyperapp.h)(TextInput, {
+      field: 'user_id',
+      func: actions.user_select,
+      init: state.user_id,
+      label: 'User UUID'
+    })
+  );
+};
+},{"hyperapp":"node_modules/hyperapp/src/index.js"}],"src/view.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -699,57 +753,28 @@ var _usertable = require('./components/usertable');
 
 var _datatable = require('./components/datatable');
 
+var _inputs = require('./components/inputs');
+
 var view = exports.view = function view(state, actions) {
   return (0, _hyperapp.h)(
     'section',
     null,
     (0, _hyperapp.h)(
-      'h3',
+      'h2',
       null,
       'Search Propel2 LRS'
     ),
-    (0, _hyperapp.h)(
-      'label',
-      {
-        'for': 'activity_id',
-        onclick: function onclick(e) {
-          return actions.update_activity(state.activity_id);
-        }
-      },
-      'Activity ID:',
-      (0, _hyperapp.h)('input', {
-        name: 'activity_id',
-        type: 'text',
-        'class': 'searchInput',
-        value: state.activity_id,
-        oninput: function oninput(e) {
-          return actions.update_activity(e.target.value);
-        },
-        onload: function onload() {
-          return actions.update_activity(state.activity_id);
-        }
-      })
-    ),
+    (0, _hyperapp.h)(_inputs.InputFields, { state: state, actions: actions }),
     (0, _hyperapp.h)('br', null),
     (0, _hyperapp.h)(
-      'label',
-      { 'for': 'user_id' },
-      'User ID:',
-      (0, _hyperapp.h)('input', {
-        type: 'text',
-        'class': 'searchInput',
-        value: state.user_id,
-        oninput: function oninput(e) {
-          return actions.user_select(e.target.value);
-        }
-      })
-    ),
-    (0, _hyperapp.h)('br', null),
-    (0, _hyperapp.h)(_usertable.UserTable, { state: state, user_select: actions.user_select }),
-    (0, _hyperapp.h)(_datatable.DataTable, { data: state.displaydata })
+      'div',
+      { 'class': 'tables' },
+      (0, _hyperapp.h)(_usertable.UserTable, { state: state, user_select: actions.user_select }),
+      (0, _hyperapp.h)(_datatable.DataTable, { data: state.displaydata })
+    )
   );
 };
-},{"hyperapp":"node_modules/hyperapp/src/index.js","./state":"src/state.js","./components/usertable":"src/components/usertable.js","./components/datatable":"src/components/datatable.js"}],"node_modules/debounce-promise/dist/index.js":[function(require,module,exports) {
+},{"hyperapp":"node_modules/hyperapp/src/index.js","./state":"src/state.js","./components/usertable":"src/components/usertable.js","./components/datatable":"src/components/datatable.js","./components/inputs":"src/components/inputs.js"}],"node_modules/debounce-promise/dist/index.js":[function(require,module,exports) {
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -942,7 +967,7 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/app.css":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/app.scss":[function(require,module,exports) {
 
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
@@ -958,10 +983,10 @@ var _state = require('./state');
 
 var _actions = require('./actions');
 
-require('./app.css');
+require('./app.scss');
 
 (0, _hyperapp.app)(_state.state, _actions.actions, _view.view, document.body);
-},{"hyperapp":"node_modules/hyperapp/src/index.js","./view":"src/view.js","./state":"src/state.js","./actions":"src/actions.js","./app.css":"src/app.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"hyperapp":"node_modules/hyperapp/src/index.js","./view":"src/view.js","./state":"src/state.js","./actions":"src/actions.js","./app.scss":"src/app.scss"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -990,7 +1015,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '55799' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '58495' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
