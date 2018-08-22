@@ -439,17 +439,251 @@ function app(state, actions, view, container) {
     return element;
   }
 }
-},{}],"state.js":[function(require,module,exports) {
+},{}],"src/state.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var state = exports.state = {
-  username: '',
-  userdata: null
+  activity_id: '499a63ab-971f-4edd-9c7d-a18b21227f7e',
+  user_id: '',
+  lrsdata: [],
+  displaydata: []
 };
-},{}],"view.js":[function(require,module,exports) {
+},{}],"src/lib/lib.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var uniq = exports.uniq = function uniq(ar) {
+  return ar.filter(function (v, i, s) {
+    return s.indexOf(v) === i;
+  });
+};
+var pluck = exports.pluck = function pluck(ele) {
+  return function (arr) {
+    return arr.map(function (a) {
+      return a[ele];
+    });
+  };
+};
+var sortByProp = exports.sortByProp = function sortByProp(prop) {
+  return function (a, b) {
+    if (a[prop] < b[prop]) return -1;
+    if (a[prop] > b[prop]) return 1;
+    return 0;
+  };
+};
+
+var display_time = exports.display_time = function display_time(stamp) {
+  var currentDate = new Date(stamp),
+      day = currentDate.getDate(),
+      month = currentDate.getMonth() + 1,
+      year = currentDate.getFullYear(),
+      hours = currentDate.getHours(),
+      minutes = currentDate.getMinutes();
+
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  var suffix = hours >= 12 ? "PM" : "AM";
+  // hours = suffix === 'PM' ? hours - 12 : hours;
+  hours = hours === 0 ? 12 : hours;
+  return year + "-" + month + "-" + day + " " + hours + ":" + minutes + " " + suffix;
+};
+
+var time_from_seconds = exports.time_from_seconds = function time_from_seconds(time) {
+  var hrs = Math.floor(time / 3600);
+  var mins = Math.floor(time % 3600 / 60);
+  var secs = Math.round(time % 60);
+  var hrstr = hrs > 0 ? hrs + "h " : '';
+  var minstr = mins > 0 ? mins + "m " : '';
+  return "" + hrstr + minstr + secs + "s";
+};
+},{}],"src/components/usertable.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.UserTable = undefined;
+
+var _hyperapp = require('hyperapp');
+
+var _lib = require('../lib/lib');
+
+var uniqueUsers = function uniqueUsers(records) {
+  return (0, _lib.uniq)((0, _lib.pluck)("user_id")(records));
+};
+
+var UserRow = function UserRow(_ref) {
+  var id = _ref.id,
+      user_select = _ref.user_select;
+  return (0, _hyperapp.h)(
+    'tr',
+    null,
+    (0, _hyperapp.h)(
+      'td',
+      null,
+      (0, _hyperapp.h)(
+        'a',
+        { onclick: function onclick(e) {
+            return user_select(id);
+          } },
+        id
+      )
+    )
+  );
+};
+
+var UserTable = exports.UserTable = function UserTable(_ref2) {
+  var state = _ref2.state,
+      user_select = _ref2.user_select;
+  return (0, _hyperapp.h)(
+    'table',
+    { id: 'usertable' },
+    (0, _hyperapp.h)(
+      'thead',
+      null,
+      (0, _hyperapp.h)(
+        'th',
+        null,
+        'Users'
+      )
+    ),
+    (0, _hyperapp.h)(
+      'tbody',
+      null,
+      uniqueUsers(state.lrsdata).map(function (user) {
+        return (0, _hyperapp.h)(UserRow, { id: user, user_select: user_select });
+      })
+    )
+  );
+};
+},{"hyperapp":"node_modules/hyperapp/src/index.js","../lib/lib":"src/lib/lib.js"}],"src/components/datatable.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.DataTable = undefined;
+
+var _hyperapp = require('hyperapp');
+
+var _lib = require('../lib/lib');
+
+var LrsRow = function LrsRow(_ref) {
+  var row = _ref.row;
+  return (0, _hyperapp.h)(
+    'tr',
+    null,
+    (0, _hyperapp.h)(
+      'td',
+      { 'class': 'tiny' },
+      row.user_id
+    ),
+    (0, _hyperapp.h)(
+      'td',
+      { 'class': 'tiny' },
+      row.context.item_id
+    ),
+    (0, _hyperapp.h)(
+      'td',
+      null,
+      row.verb
+    ),
+    (0, _hyperapp.h)(
+      'td',
+      null,
+      (0, _lib.time_from_seconds)(row.context.timing.timer.total)
+    ),
+    (0, _hyperapp.h)(
+      'td',
+      null,
+      row.context.chosen_answer
+    ),
+    (0, _hyperapp.h)(
+      'td',
+      null,
+      row.context.correct ? "Yes" : ''
+    ),
+    (0, _hyperapp.h)(
+      'td',
+      { 'class': 'tiny' },
+      (0, _lib.display_time)(row.context.timing.timestamp),
+      ' ',
+      row.context.timing.timezone
+    ),
+    (0, _hyperapp.h)(
+      'td',
+      { 'class': 'tiny' },
+      (0, _lib.display_time)(row.timestamp)
+    )
+  );
+};
+
+var DataTable = exports.DataTable = function DataTable(_ref2) {
+  var data = _ref2.data;
+  return (0, _hyperapp.h)(
+    'table',
+    { id: 'datatable' },
+    (0, _hyperapp.h)(
+      'thead',
+      null,
+      (0, _hyperapp.h)(
+        'th',
+        null,
+        'User'
+      ),
+      (0, _hyperapp.h)(
+        'th',
+        null,
+        'Item'
+      ),
+      (0, _hyperapp.h)(
+        'th',
+        null,
+        'Verb'
+      ),
+      (0, _hyperapp.h)(
+        'th',
+        null,
+        'Time'
+      ),
+      (0, _hyperapp.h)(
+        'th',
+        null,
+        'Chosen Answer'
+      ),
+      (0, _hyperapp.h)(
+        'th',
+        null,
+        'Correct?'
+      ),
+      (0, _hyperapp.h)(
+        'th',
+        null,
+        'User Timestamp'
+      ),
+      (0, _hyperapp.h)(
+        'th',
+        null,
+        'Server Timestamp'
+      )
+    ),
+    (0, _hyperapp.h)(
+      'tbody',
+      null,
+      data.sort((0, _lib.sortByProp)('timestamp')).map(function (row) {
+        return (0, _hyperapp.h)(LrsRow, { row: row });
+      })
+    )
+  );
+};
+},{"hyperapp":"node_modules/hyperapp/src/index.js","../lib/lib":"src/lib/lib.js"}],"src/view.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -461,6 +695,10 @@ var _hyperapp = require('hyperapp');
 
 var _state = require('./state');
 
+var _usertable = require('./components/usertable');
+
+var _datatable = require('./components/datatable');
+
 var view = exports.view = function view(state, actions) {
   return (0, _hyperapp.h)(
     'section',
@@ -468,43 +706,50 @@ var view = exports.view = function view(state, actions) {
     (0, _hyperapp.h)(
       'h3',
       null,
-      'Search Github Users!'
+      'Search Propel2 LRS'
     ),
-    (0, _hyperapp.h)('input', {
-      type: 'text',
-      'class': 'searchInput',
-      value: state.username,
-      oninput: function oninput(e) {
-        return actions.update_username(e.target.value);
-      }
-    }),
+    (0, _hyperapp.h)(
+      'label',
+      {
+        'for': 'activity_id',
+        onclick: function onclick(e) {
+          return actions.update_activity(state.activity_id);
+        }
+      },
+      'Activity ID:',
+      (0, _hyperapp.h)('input', {
+        name: 'activity_id',
+        type: 'text',
+        'class': 'searchInput',
+        value: state.activity_id,
+        oninput: function oninput(e) {
+          return actions.update_activity(e.target.value);
+        },
+        onload: function onload() {
+          return actions.update_activity(state.activity_id);
+        }
+      })
+    ),
     (0, _hyperapp.h)('br', null),
     (0, _hyperapp.h)(
-      'div',
-      { 'class': 'usercard' },
-      state.userdata ? (0, _hyperapp.h)(
-        'div',
-        null,
-        (0, _hyperapp.h)('img', { 'class': 'usercard__img', src: state.userdata.avatar_url }),
-        (0, _hyperapp.h)(
-          'h5',
-          null,
-          state.userdata.name
-        ),
-        (0, _hyperapp.h)(
-          'p',
-          null,
-          state.userdata.location
-        )
-      ) : (0, _hyperapp.h)(
-        'div',
-        null,
-        ' search em'
-      )
-    )
+      'label',
+      { 'for': 'user_id' },
+      'User ID:',
+      (0, _hyperapp.h)('input', {
+        type: 'text',
+        'class': 'searchInput',
+        value: state.user_id,
+        oninput: function oninput(e) {
+          return actions.user_select(e.target.value);
+        }
+      })
+    ),
+    (0, _hyperapp.h)('br', null),
+    (0, _hyperapp.h)(_usertable.UserTable, { state: state, user_select: actions.user_select }),
+    (0, _hyperapp.h)(_datatable.DataTable, { data: state.displaydata })
   );
 };
-},{"hyperapp":"node_modules/hyperapp/src/index.js","./state":"state.js"}],"node_modules/debounce-promise/dist/index.js":[function(require,module,exports) {
+},{"hyperapp":"node_modules/hyperapp/src/index.js","./state":"src/state.js","./components/usertable":"src/components/usertable.js","./components/datatable":"src/components/datatable.js"}],"node_modules/debounce-promise/dist/index.js":[function(require,module,exports) {
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -586,7 +831,7 @@ function defer() {
   return deferred;
 }
 //# sourceMappingURL=index.js.map
-},{}],"actions.js":[function(require,module,exports) {
+},{}],"src/actions.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -600,29 +845,109 @@ var _debouncePromise2 = _interopRequireDefault(_debouncePromise);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var github_user_api = 'https://api.github.com/users/';
+var lrs_api = 'https://4ibvog74h7.execute-api.us-east-1.amazonaws.com/dev/lrs/activities/';
 
-var fetch_userdata = function fetch_userdata(username) {
-  return fetch('' + github_user_api + username).then(function (res) {
+var fetch_lrsdata = function fetch_lrsdata(username) {
+  return fetch('' + lrs_api + username).then(function (res) {
     return res.json();
   });
 };
-var get_userdata = (0, _debouncePromise2.default)(fetch_userdata, 700);
+var get_lrsdata = (0, _debouncePromise2.default)(fetch_lrsdata, 700);
 
 var actions = exports.actions = {
-  update_username: function update_username(username) {
+  update_activity: function update_activity(activity_id) {
     return function (state, actions) {
-      get_userdata(username).then(actions.set_userdata);
-      return { username: username };
+      get_lrsdata(activity_id).then(actions.set_lrsdata).then(actions.log_state);
+      return { activity_id: activity_id };
     };
   },
-  set_userdata: function set_userdata(userdata) {
+  set_lrsdata: function set_lrsdata(lrsdata) {
     return function (state) {
-      return { userdata: userdata };
+      return { lrsdata: lrsdata, displaydata: lrsdata };
+    };
+  },
+  log_state: function log_state() {
+    return function (state) {
+      window.__state = state;
+      console.log("state:", state);
+    };
+  },
+  user_select: function user_select(user_id) {
+    return function (state) {
+      return { user_id: user_id, displaydata: state.lrsdata.filter(function (r) {
+          return r.user_id === user_id;
+        }) };
     };
   }
+
 };
-},{"debounce-promise":"node_modules/debounce-promise/dist/index.js"}],"app.js":[function(require,module,exports) {
+},{"debounce-promise":"node_modules/debounce-promise/dist/index.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+  newLink.onload = function () {
+    link.remove();
+  };
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/app.css":[function(require,module,exports) {
+
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/app.js":[function(require,module,exports) {
 'use strict';
 
 var _hyperapp = require('hyperapp');
@@ -633,8 +958,10 @@ var _state = require('./state');
 
 var _actions = require('./actions');
 
+require('./app.css');
+
 (0, _hyperapp.app)(_state.state, _actions.actions, _view.view, document.body);
-},{"hyperapp":"node_modules/hyperapp/src/index.js","./view":"view.js","./state":"state.js","./actions":"actions.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"hyperapp":"node_modules/hyperapp/src/index.js","./view":"src/view.js","./state":"src/state.js","./actions":"src/actions.js","./app.css":"src/app.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -663,7 +990,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '56562' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '55799' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -804,5 +1131,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
-//# sourceMappingURL=/app.e70f38f5.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/app.js"], null)
+//# sourceMappingURL=/app.1d621ea6.map
