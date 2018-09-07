@@ -8,6 +8,16 @@ div.inputs, div.tables {
   justify-content: space-around;
   align-content: flex-start; }
 
+h3 {
+  text-align: center;
+  font-size: 24pt;
+  font-weight: normal; }
+  h3 em {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #9c4242;
+    display: block; }
+
 div.tables table {
   margin: 2em; }
 

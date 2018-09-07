@@ -448,6 +448,8 @@ Object.defineProperty(exports, "__esModule", {
 var state = exports.state = {
   activity_id: '499a63ab-971f-4edd-9c7d-a18b21227f7e',
   user_id: '',
+  user_email: '',
+  user: {},
   lrsdata: [],
   displaydata: []
 };
@@ -519,7 +521,8 @@ var uniqueUsers = function uniqueUsers(records) {
 
 var UserRow = function UserRow(_ref) {
   var id = _ref.id,
-      user_select = _ref.user_select;
+      user_select = _ref.user_select,
+      email = _ref.email;
   return (0, _hyperapp.h)(
     'tr',
     null,
@@ -531,7 +534,7 @@ var UserRow = function UserRow(_ref) {
         { onclick: function onclick(e) {
             return user_select(id);
           } },
-        id
+        email
       )
     )
   );
@@ -555,8 +558,11 @@ var UserTable = exports.UserTable = function UserTable(_ref2) {
     (0, _hyperapp.h)(
       'tbody',
       null,
-      uniqueUsers(state.lrsdata).map(function (user) {
-        return (0, _hyperapp.h)(UserRow, { id: user, user_select: user_select });
+      Object.keys(state.lrsdata).map(function (user) {
+        return (0, _hyperapp.h)(UserRow, {
+          id: user,
+          email: state.lrsdata[user].email,
+          user_select: user_select });
       })
     )
   );
@@ -737,7 +743,82 @@ var InputFields = exports.InputFields = function InputFields(_ref2) {
     })
   );
 };
-},{"hyperapp":"node_modules/hyperapp/src/index.js"}],"src/view.js":[function(require,module,exports) {
+},{"hyperapp":"node_modules/hyperapp/src/index.js"}],"src/components/report/demographics.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Demographics = undefined;
+
+var _hyperapp = require("hyperapp");
+
+var Demographics = exports.Demographics = function Demographics(_ref) {
+  var user = _ref.user;
+  return (0, _hyperapp.h)(
+    "demographics",
+    { appointmentid: "", functioncode: "", workstationname: "" },
+    (0, _hyperapp.h)("demographic", { name: "CandidateFirstName", value: "" }),
+    (0, _hyperapp.h)("demographic", { name: "CandidateLastName", value: "" }),
+    (0, _hyperapp.h)("demographic", { name: "email", value: "{user.email}" })
+  );
+};
+},{"hyperapp":"node_modules/hyperapp/src/index.js"}],"src/components/report.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Report = undefined;
+
+var _hyperapp = require('hyperapp');
+
+var _demographics = require('./report/demographics');
+
+var Report = exports.Report = function Report(_ref) {
+  var data = _ref.data;
+  return (
+    // <?xml version="1.0" encoding="UTF-8"?>
+    (0, _hyperapp.h)(
+      'simpleXMLResult',
+      { xmlns: 'http://sdk.prometric.com/schemas/SimpleXMLResults1_3', version: '1.3' },
+      (0, _hyperapp.h)(_demographics.Demographics, { user: data.user }),
+      (0, _hyperapp.h)(
+        'exam',
+        { resourcefilename: '70084.cer', resourceversion: '1.0', name: 'MOC-PSCOS', examformname: 'PSCOS', driverversion: '9.1.1 Build #0 (UTD 9.1 CORE (A))', startdatetime: '{data.*}', enddatetime: '{data.*}', duration: '{data.*}', restartcount: '{data.*}', count: '{data.*}', countcorrect: '{data.*}', countincorrect: '{data.*}', countskipped: '0', countmarked: '0', functioncode: '', workstationname: '{data.ipaddress}' },
+        (0, _hyperapp.h)('score', { scorevalue: '197.727272727273', scoredisplay: '197.73', passindicator: 'p', scoremin: '0', scoremax: '200', scorecut: '0' }),
+        (0, _hyperapp.h)(
+          'sections',
+          null,
+          (0, _hyperapp.h)(
+            'section',
+            { name: 'scnPSCOS1', count: '50', countcorrect: '49', countincorrect: '1', countskipped: '0', countmarked: '0', startdatetime: '2017-04-21T12:00:31', enddatetime: '2017-04-21T12:14:32', duration: '802' },
+            (0, _hyperapp.h)('score', { scorevalue: '50', scoredisplay: '50.00', passindicator: 'p', scoremin: '0', scoremax: '50', scorecut: '0' }),
+            (0, _hyperapp.h)(
+              'itemgroup',
+              { name: '28214', scored: '1', duration: '27.503', progid: 'UTDP.MultiChoiceItem.1', weight: '1', presented: '1', visited: '1' },
+              (0, _hyperapp.h)('item', { response: 'E', correctresponse: 'E', score: '1', scoremin: '0', scoremax: '1', scorenom: '0', complete: '1', skipped: '0', marked: '0' })
+            )
+          ),
+          (0, _hyperapp.h)('section', { name: 'scnNotice', count: '0', countcorrect: '0', countincorrect: '0', countskipped: '0', countmarked: '0', startdatetime: '2017-04-21T12:59:54', enddatetime: '2017-04-21T13:00:07', duration: '12' }),
+          (0, _hyperapp.h)('section', { name: 'scnConclude', count: '0', countcorrect: '0', countincorrect: '0', countskipped: '0', countmarked: '0', startdatetime: '2017-04-21T13:00:07', enddatetime: '2017-04-21T13:00:11', duration: '3' })
+        ),
+        (0, _hyperapp.h)(
+          'categories',
+          null,
+          (0, _hyperapp.h)(
+            'category',
+            { name: 'catNDA', count: '0', countcorrect: '0', countincorrect: '0', countskipped: '0', countmarked: '0' },
+            (0, _hyperapp.h)('itemref', { name: 'NDA_1' })
+          ),
+          (0, _hyperapp.h)('category', { name: 'catSurvey', count: '0', countcorrect: '0', countincorrect: '0', countskipped: '0', countmarked: '0' }),
+          (0, _hyperapp.h)('category', { name: 'CATEGORYNAME', count: '0', countcorrect: '0', countincorrect: '0', countskipped: '0', countmarked: '0' })
+        )
+      )
+    )
+  );
+};
+},{"hyperapp":"node_modules/hyperapp/src/index.js","./report/demographics":"src/components/report/demographics.js"}],"src/view.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -755,6 +836,8 @@ var _datatable = require('./components/datatable');
 
 var _inputs = require('./components/inputs');
 
+var _report = require('./components/report');
+
 var view = exports.view = function view(state, actions) {
   return (0, _hyperapp.h)(
     'section',
@@ -767,14 +850,25 @@ var view = exports.view = function view(state, actions) {
     (0, _hyperapp.h)(_inputs.InputFields, { state: state, actions: actions }),
     (0, _hyperapp.h)('br', null),
     (0, _hyperapp.h)(
+      'h3',
+      null,
+      (0, _hyperapp.h)(
+        'em',
+        null,
+        state.user.id
+      ),
+      state.user.email
+    ),
+    (0, _hyperapp.h)(
       'div',
       { 'class': 'tables' },
       (0, _hyperapp.h)(_usertable.UserTable, { state: state, user_select: actions.user_select }),
-      (0, _hyperapp.h)(_datatable.DataTable, { data: state.displaydata })
+      (0, _hyperapp.h)(_datatable.DataTable, { data: state.displaydata }),
+      (0, _hyperapp.h)(_report.Report, { data: state })
     )
   );
 };
-},{"hyperapp":"node_modules/hyperapp/src/index.js","./state":"src/state.js","./components/usertable":"src/components/usertable.js","./components/datatable":"src/components/datatable.js","./components/inputs":"src/components/inputs.js"}],"node_modules/debounce-promise/dist/index.js":[function(require,module,exports) {
+},{"hyperapp":"node_modules/hyperapp/src/index.js","./state":"src/state.js","./components/usertable":"src/components/usertable.js","./components/datatable":"src/components/datatable.js","./components/inputs":"src/components/inputs.js","./components/report":"src/components/report.js"}],"node_modules/debounce-promise/dist/index.js":[function(require,module,exports) {
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -872,12 +966,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var lrs_api = 'https://4ibvog74h7.execute-api.us-east-1.amazonaws.com/dev/lrs/activities/';
 
-var fetch_lrsdata = function fetch_lrsdata(username) {
-  return fetch('' + lrs_api + username).then(function (res) {
+var fetch_lrsdata = function fetch_lrsdata(activity_id) {
+  return fetch('' + lrs_api + activity_id).then(function (res) {
     return res.json();
   });
 };
 var get_lrsdata = (0, _debouncePromise2.default)(fetch_lrsdata, 700);
+var first_user = function first_user(lrsdata) {
+  return lrsdata[Object.keys(lrsdata)[0]];
+};
 
 var actions = exports.actions = {
   update_activity: function update_activity(activity_id) {
@@ -888,7 +985,10 @@ var actions = exports.actions = {
   },
   set_lrsdata: function set_lrsdata(lrsdata) {
     return function (state) {
-      return { lrsdata: lrsdata, displaydata: lrsdata };
+      return { lrsdata: lrsdata,
+        user: first_user(lrsdata),
+        displaydata: first_user(lrsdata).lrsEvents
+      };
     };
   },
   log_state: function log_state() {
@@ -899,12 +999,11 @@ var actions = exports.actions = {
   },
   user_select: function user_select(user_id) {
     return function (state) {
-      return { user_id: user_id, displaydata: state.lrsdata.filter(function (r) {
-          return r.user_id === user_id;
-        }) };
+      return { user: state.lrsdata[user_id],
+        displaydata: state.lrsdata[user_id].lrsEvents
+      };
     };
   }
-
 };
 },{"debounce-promise":"node_modules/debounce-promise/dist/index.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
@@ -1015,7 +1114,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '58495' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57445' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

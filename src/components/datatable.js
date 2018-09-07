@@ -16,21 +16,21 @@ const LrsRow = ({row}) => (
 
 export const DataTable = ({ data }) => (
   <table id='datatable'>
-  <thead>
-    <th>User</th>
-    <th>Item</th>
-    <th>Verb</th>
-    <th>Time</th>
-    <th>Chosen Answer</th>
-    <th>Correct?</th>
-    <th>User Timestamp</th>
-    <th>Server Timestamp</th>
-  </thead>
-  <tbody>
-    {data.sort( sortByProp('timestamp') ).map((row) => (
-      <LrsRow row={row}>
-      </LrsRow>
-    ))}
-  </tbody>
+    <thead>
+      <th>User</th>
+      <th>Item</th>
+      <th>Verb</th>
+      <th>Time</th>
+      <th>Chosen Answer</th>
+      <th>Correct?</th>
+      <th>User Timestamp</th>
+      <th>Server Timestamp</th>
+    </thead>
+    <tbody>
+      {data.sort( sortByProp('timestamp') ).map((row) => (
+        <LrsRow row={row}>
+        </LrsRow>
+      ))}
+    </tbody>
   </table>
 )
