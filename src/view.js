@@ -14,8 +14,8 @@ const no_user = (actions) => (
 
 const selected_user = ({user}) => {
   <h3>
-    <em>{ user.id }</em>
-    { user.email }
+    <em>{ user }</em>
+    { user }
   </h3>
 }
 
@@ -26,7 +26,7 @@ export const view = (state, actions) => (
     <br />
     { state.user.id ? selected_user(state.user) : no_user(actions) }
     <div class='tables'>
-      <UserTable state={state} user_select={actions.user_select}></UserTable>
+      <UserTable users={state.users} user_select={actions.user_select}></UserTable>
       <DataTable data={state.displaydata}></DataTable>
       <Report data={state}></Report>
     </div>

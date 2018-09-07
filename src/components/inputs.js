@@ -19,7 +19,7 @@ export const InputFields = ({state, actions}) => (
   <div class='inputs'>
     <TextInput
       field='activity_id'
-      func={actions.update_activity}
+      func={actions.get_records}
       init={state.activity_id}
       label="Activity UUID"
     />

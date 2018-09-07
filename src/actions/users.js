@@ -12,4 +12,11 @@ export const get_users = () => (state, actions) => {
   return {}
 };
 
-export const set_users = (users) => (state) => ({ users })
+export const set_users = (users) => ({ users })
+
+export const user_select = user_id => (state, actions) => {
+  console.log('user_id', user_id)
+  actions.get_records({activity_id: state.activity_id, user_id})
+  let uu = state.users.filter( u => u.id == user_id )[0]
+  return { user: { id: uu.id, email: uu.email } }
+};
