@@ -5,19 +5,19 @@ import { DataTable } from './components/datatable'
 import { InputFields } from './components/inputs'
 import { Report } from './components/report'
 
-const no_user = (actions) => (
+const no_user = actions => (
   <button
   class="fetch_users"
   onclick={ e => actions.get_users() }
   >Fetch Users</button>
 )
 
-const selected_user = ({user}) => {
+const selected_user = user => (
   <h3>
-    <em>{ user }</em>
-    { user }
+    <em>{ user.id }</em>
+    { user.email }
   </h3>
-}
+)
 
 export const view = (state, actions) => (
   <section>

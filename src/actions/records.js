@@ -1,7 +1,6 @@
 import debounce from 'debounce-promise'
 import {endpoint} from './api'
 
-const first_user = lrsdata => lrsdata[Object.keys(lrsdata)[0]];
 const fetch_lrsdata = (activity_id, user_id) =>
   fetch(`${endpoint}/lrs/activities/${activity_id}?user_id=${user_id}`)
     .then(res => res.json())

@@ -26,7 +26,7 @@ export const InputFields = ({state, actions}) => (
     <TextInput
       field='user_id'
       func={actions.user_select}
-      init={state.user_id}
+      init={state.user.id}
       label="User UUID"
     />
   </div>
