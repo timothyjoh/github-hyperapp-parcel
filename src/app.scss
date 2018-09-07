@@ -19,6 +19,14 @@ h3 {
     display: block;
   }
 }
+button.fetch_users {
+  text-align: center;
+  padding: 2pt 5pt;
+  display: block;
+  margin: 10pt auto;
+  background: rgb(31, 202, 105);
+  border: 3px solid rgb(31, 114, 72);
+}
 div.tables table {
   margin: 2em;
 }
