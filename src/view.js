@@ -3,7 +3,7 @@ import { state } from './state';
 import { UserTable } from './components/usertable'
 import { DataTable } from './components/datatable'
 import { InputFields } from './components/inputs'
-import { Report } from './components/report'
+import { Report } from './components/report/report'
 
 const no_user = actions => (
   <button
@@ -25,10 +25,10 @@ export const view = (state, actions) => (
     <InputFields state={state} actions={actions} />
     <br />
     { state.user.id ? selected_user(state.user) : no_user(actions) }
+    <Report state={state}></Report>
     <div class='tables'>
-      <UserTable users={state.users} user_select={actions.user_select}></UserTable>
+      <UserTable users={state.users} select={actions.user_select} />
       <DataTable data={state.displaydata}></DataTable>
-      <Report data={state}></Report>
     </div>
   </section>
 );

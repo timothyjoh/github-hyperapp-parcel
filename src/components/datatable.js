@@ -27,9 +27,8 @@ export const DataTable = ({ data }) => (
       <th>Server Timestamp</th>
     </thead>
     <tbody>
-      {data.sort( sortByProp('timestamp') ).map((row) => (
-        <LrsRow row={row}>
-        </LrsRow>
+      {data.sort( sortByProp('timestamp') ).map(row => (
+        <LrsRow row={row} />
       ))}
     </tbody>
   </table>

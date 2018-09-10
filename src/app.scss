@@ -19,6 +19,11 @@ h3 {
     display: block;
   }
 }
+h4 {
+  text-align: center;
+  font-weight: normal;
+  color: #c03;
+}
 button.fetch_users {
   text-align: center;
   padding: 2pt 5pt;
@@ -26,6 +31,16 @@ button.fetch_users {
   margin: 10pt auto;
   background: rgb(31, 202, 105);
   border: 3px solid rgb(31, 114, 72);
+}
+div.tables {
+  max-height: 300px;
+  overflow-y: scroll;
+  border: 3px solid #c03;
+}
+div.report {
+  min-height: 50px;
+  overflow-y: scroll;
+  border: 3px solid #c83;
 }
 div.tables table {
   margin: 2em;

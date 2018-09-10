@@ -1,15 +1,15 @@
 import { h } from 'hyperapp'
 import { uniq, pluck } from '../lib/lib'
 
-const UserRow = ({id, email, user_select}) => (
+const UserRow = ({id, email, clickFn}) => (
   <tr>
     <td class='tiny'>
-      <a onclick={ (e) => user_select(id) }>{email}</a>
+      <a onclick={ (e) => clickFn(id) }>{email}</a>
       </td>
   </tr>
 )
 
-export const UserTable = ({ users, user_select }) => (
+export const UserTable = ({ users, select }) => (
   <table id='usertable'>
   <thead>
     <th>Users</th>
@@ -19,8 +19,8 @@ export const UserTable = ({ users, user_select }) => (
       <UserRow
         id={user.id}
         email={user.email}
-        user_select={user_select}>
-      </UserRow>
+        clickFn={select}
+      ></UserRow>
     ))}
   </tbody>
   </table>
