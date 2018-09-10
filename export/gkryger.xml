@@ -1,10 +1,10 @@
 <simplexmlresult xmlns="http://sdk.prometric.com/schemas/SimpleXMLResults1_3" version="1.3">
   <demographics appointmentid="" functioncode="" workstationname="">
-    <demographic name="CandidateFirstName" value=""/>
-    <demographic name="CandidateLastName" value=""/>
-    <demographic name="email" value="{user.email}"/>
+    <demographic name="CandidateFirstName" value="Gil"/>
+    <demographic name="CandidateLastName" value="Kryger"/>
+    <demographic name="email" value="gkryger@gmail.com"/>
   </demographics>
-  <exam resourcefilename="gkryger@gmail.com.xml" resourceversion="1.0" name="MOC-HANDEXAM" examformname="HANDEXAM" driverversion="9.1.1 Build #0 (UTD 9.1 CORE (A))" startdatetime="2018-9-6 18:08 PM America/Los_Angeles" enddatetime="2018-9-7 15:20 PM America/Los_Angeles" duration="13142.168" restartcount="0" count="175" countcorrect="175" countincorrect="0" countskipped="0" countmarked="0" functioncode="" workstationname="">
+  <exam resourcefilename="gkrygeratgmaildotcom.xml" resourceversion="1.0" name="MOC-HANDEXAM" examformname="HANDEXAM" driverversion="9.1.1 Build #0 (UTD 9.1 CORE (A))" startdatetime="2018-9-6 18:08 PM America/Los_Angeles" enddatetime="2018-9-7 15:20 PM America/Los_Angeles" duration="13142.168" restartcount="0" count="175" countcorrect="175" countincorrect="0" countskipped="0" countmarked="0" functioncode="" workstationname="">
     <score scorevalue="175" scoredisplay="100.00" passindicator="p" scoremin="0" scoremax="175" scorecut="0"/>
     <sections>
       <section name="hand_exam" count="175" countcorrect="175" countincorrect="0" countskipped="0" countmarked="0" startdatetime="2018-9-6 18:08 PM America/Los_Angeles" enddatetime="2018-9-7 15:20 PM America/Los_Angeles" duration="13142.168">

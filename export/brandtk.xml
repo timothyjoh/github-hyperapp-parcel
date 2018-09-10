@@ -1,0 +1,534 @@
+<simplexmlresult xmlns="http://sdk.prometric.com/schemas/SimpleXMLResults1_3" version="1.3">
+  <demographics appointmentid="" functioncode="" workstationname="">
+    <demographic name="CandidateFirstName" value="Keith"/>
+    <demographic name="CandidateLastName" value="Brandt"/>
+    <demographic name="email" value="brandtk@wustl.edu"/>
+  </demographics>
+  <exam resourcefilename="brandtk@wustl.edu.xml" resourceversion="1.0" name="MOC-HANDEXAM" examformname="HANDEXAM" driverversion="9.1.1 Build #0 (UTD 9.1 CORE (A))" startdatetime="2018-8-21 12:43 PM America/Chicago" enddatetime="2018-8-24 16:22 PM America/Chicago" duration="20605.441" restartcount="0" count="175" countcorrect="161" countincorrect="11" countskipped="3" countmarked="0" functioncode="" workstationname="">
+    <score scorevalue="161" scoredisplay="92.00" passindicator="p" scoremin="0" scoremax="175" scorecut="0"/>
+    <sections>
+      <section name="hand_exam" count="175" countcorrect="161" countincorrect="11" countskipped="3" countmarked="0" startdatetime="2018-8-21 12:43 PM America/Chicago" enddatetime="2018-8-24 16:22 PM America/Chicago" duration="20605.441">
+        <score scorevalue="161" scoredisplay="92.00" passindicator="p" scoremin="0" scoremax="175" scorecut="0"/>
+        <itemgroup id="f0898252-433f-4d3d-b920-7bfe5fc2be6f" name="SA12-S2-Q57" scored="1" duration="14.931" durationfirstattempt="14.931" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="7a2a4f55-0647-4e36-9440-aa39889579ba" name="SA15-Q74" scored="1" duration="18.283" durationfirstattempt="8.05" durationrationale="4.176" durationsecondattempt="6.057" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="eabe148a-4ed6-47c7-bcca-46718005861c" name="SA14_34" scored="1" duration="7.197" durationfirstattempt="7.197" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="9c2e2ea2-96c0-4d64-9505-56767c3022de" name="SA16: Question 127" scored="1" duration="20.602" durationfirstattempt="8.019" durationrationale="6.276" durationsecondattempt="6.307" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="59ecc9e3-ae12-45b8-ba85-1cd533357bde" name="SA16: Question 44" scored="0" duration="25.739" durationfirstattempt="16.4" durationrationale="1.644" durationsecondattempt="7.695" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="A" score="0" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="de136090-46d7-4542-bfbf-bdab8270fc1c" name="SA12-S4-Q128" scored="1" duration="39.111" durationfirstattempt="39.111" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="0b08ae57-d29e-4b10-9871-502485b0f84b" name="SA13-S1-Q8.2" scored="0" duration="18.816" durationfirstattempt="8.231" durationrationale="4.566" durationsecondattempt="6.019" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="A" score="0" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="331e2dd8-a8e6-4c3f-8bdd-1acd4fcef7a1" name="SA16: Question 192" scored="1" duration="17.900" durationfirstattempt="17.9" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="3fcb5ac3-c916-4666-974b-4aadc4e68a5b" name="SA15-Q237" scored="1" duration="9.793" durationfirstattempt="9.793" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="d5532259-f097-4f6f-84ed-224de4673c90" name="SA13-Q44" scored="1" duration="20.503" durationfirstattempt="20.503" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="8b8c191b-aa5f-4570-9910-4af073bb9a5b" name="SA13-S1-Q17.2" scored="1" duration="15.345" durationfirstattempt="7.418" durationrationale="2.274" durationsecondattempt="5.653" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="1c843517-e289-4f2b-b0fb-5a0e5e977eb9" name="SA15-Q292" scored="1" duration="9.105" durationfirstattempt="9.105" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="343ef692-e37e-41c0-b158-471fcce949e2" name="SA12-S3-Q96" scored="1" duration="51.443" durationfirstattempt="51.443" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="8746e0aa-196e-4e61-8e48-0b9a94fa4882" name="SA14_91" scored="1" duration="30.891" durationfirstattempt="11.39" durationrationale="11.819" durationsecondattempt="7.682" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="dd8f5370-7087-48ab-98f1-612e457b202f" name="SA13-S1-Q1.2" scored="1" duration="9.167" durationfirstattempt="9.167" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="e574a8da-9017-4488-960a-5d1ee2983a13" name="SA15-Q64" scored="0" duration="46.521" durationfirstattempt="8.625" durationrationale="28.094" durationsecondattempt="9.802" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="C" score="0" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="46da25bb-a24b-46a0-af7b-be69cb869ad3" name="SA14_138" scored="1" duration="8.475" durationfirstattempt="8.475" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="48aea7c3-c9a9-465d-b573-5862330cfe81" name="SA13-Q70" scored="1" duration="3416.315" durationfirstattempt="3416.315" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="2c9c0f3a-0380-4ab8-ab23-9bdb4aea0c22" name="SA14_129" scored="1" duration="27.751" durationfirstattempt="27.751" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="b0c6c0cb-e826-4d80-bdda-d8f8b926ecf0" name="SA15-Q95" scored="1" duration="9.186" durationfirstattempt="9.186" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="634adc86-3c6f-4912-9397-cc4f18070438" name="SA12-S3-Q113" scored="1" duration="44.343" durationfirstattempt="44.343" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="7b50a714-eb09-47e8-a55f-718ccb87146f" name="SA13-Q121.5" scored="1" duration="21.178" durationfirstattempt="21.178" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="2ddfb6a9-3986-4ea7-8c66-2ce2d2f1a63e" name="SA13-Q38" scored="1" duration="19.453" durationfirstattempt="19.453" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="81b22ddc-6811-4349-ae32-f92386f0c557" name="SA13-Q97" scored="1" duration="15.689" durationfirstattempt="15.689" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="d4ca2fca-f6da-4a1a-8e1b-7495b120de06" name="SA14_140" scored="1" duration="13.241" durationfirstattempt="13.241" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="99f47a2e-1900-4ca5-ab31-e974be76b120" name="SA13-Q63" scored="1" duration="30.898" durationfirstattempt="30.898" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="861590e0-0c24-4ea7-bb76-d121efee0f87" name="SA16: Question 140" scored="1" duration="16.416" durationfirstattempt="16.416" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="8a4a3e35-212c-4046-9718-29523eb01b62" name="SA16: Question 200" scored="1" duration="8.171" durationfirstattempt="8.171" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="b4acebf0-23b2-4c03-83a0-07ada46cc017" name="SA15-Q241" scored="0" duration="20.665" durationfirstattempt="9.881" durationrationale="5.107" durationsecondattempt="5.677" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="D" score="0" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="bcd7da61-3f61-4219-b9ce-7fc5ff984f51" name="SA12-S3-Q115" scored="1" duration="49.588" durationfirstattempt="49.588" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="aada10fb-4501-4912-b52f-ccb6d4ccaf9f" name="SA13-Q199.4" scored="1" duration="16.364" durationfirstattempt="16.364" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="b911b7c5-82df-4c7f-8e5e-06e9eaed53b5" name="SA16: Question 87" scored="1" duration="20.508" durationfirstattempt="20.508" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="f7b44173-a7d2-4cc7-83eb-b72e271b7ce3" name="SA13-Q27" scored="1" duration="22.863" durationfirstattempt="22.863" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="2ec012fe-b652-4a4b-8c71-c53f278745e4" name="SA14_58" scored="1" duration="156.739" durationfirstattempt="13.202" durationrationale="5.805" durationsecondattempt="129.889" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="f742bc18-5789-483c-968d-a74214389e44" name="SA15-Q279" scored="1" duration="33.197" durationfirstattempt="33.197" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="7dd02137-a26a-4085-b55d-2aac0d21983c" name="SA14_120" scored="1" duration="30.229" durationfirstattempt="30.229" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="f8574a31-5828-4a05-ab36-0d392c042068" name="SA13-Q76" scored="1" duration="17.249" durationfirstattempt="17.249" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="ae907b5e-db6c-4723-be7b-c8405aab8f5b" name="SA16: Question 47" scored="1" duration="48.777" durationfirstattempt="48.777" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="fd9e6a2b-dbe9-4bb0-a34d-efa8693385a8" name="SA14_173" scored="1" duration="30.059" durationfirstattempt="30.059" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="bd6b7fae-a0cf-4b5a-ab70-704d6dd56335" name="SA16: Question 72" scored="1" duration="20.372" durationfirstattempt="20.372" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="e556082c-5b51-4081-aef4-866860a5a939" name="SA15-Q150" scored="1" duration="11.117" durationfirstattempt="11.117" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="4ff5f8ac-b388-4708-a898-11c585b3cda8" name="SA14_42" scored="1" duration="20.664" durationfirstattempt="20.664" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="d5c5bae5-b7dc-478b-8a44-f0052eba838f" name="SA16: Question 75" scored="1" duration="45.326" durationfirstattempt="36.056" durationrationale="4.689" durationsecondattempt="4.581" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="98544d2e-7080-4757-8456-7e83326dcd90" name="SA15-Q215" scored="1" duration="57.860" durationfirstattempt="57.86" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="0745fcb4-fb23-456f-994b-904e09741dc8" name="SA16: Question 133" scored="1" duration="19.928" durationfirstattempt="19.928" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="46d6ba29-53ce-4028-8cbf-f56d828bfb15" name="SA13-Q49" scored="1" duration="302.263" durationfirstattempt="178.642" durationrationale="71.889" durationsecondattempt="51.732" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="bd536f7e-7419-439c-8d69-a5e33f400158" name="SA13-Q106.5" scored="1" duration="52.535" durationfirstattempt="23.226" durationrationale="20.926" durationsecondattempt="8.383" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="7777d963-58fe-4ddf-bb03-a0b0693156c2" name="SA15-Q274" scored="1" duration="44.919" durationfirstattempt="44.919" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="fc3a6d71-5c83-4041-b05a-285959725984" name="SA16: Question 82" scored="1" duration="15.017" durationfirstattempt="15.017" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="f6075302-115c-496c-b4b6-6868f17df4b4" name="SA14_150" scored="1" duration="140.293" durationfirstattempt="140.293" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="c91d4353-2d42-45f1-874d-7a4642bf983a" name="SA14_09" scored="1" duration="13.513" durationfirstattempt="13.513" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="9bc0488c-8a26-4612-ac13-d64baee21261" name="SA16: Question 70" scored="1" duration="31.236" durationfirstattempt="7.989" durationrationale="14.363" durationsecondattempt="8.884" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="3d9502f5-c62e-477b-b6f3-41ad57e1507c" name="SA12-S3-Q107" scored="1" duration="43.839" durationfirstattempt="10.991" durationrationale="6.368" durationsecondattempt="26.48" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="49620a23-c64f-4c92-a382-ff88aaeb78ab" name="SA16: Question 177" scored="1" duration="63.255" durationfirstattempt="13.78" durationrationale="25.026" durationsecondattempt="24.449" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="9eec09c0-71bd-425b-b9e0-466f76f9c1e1" name="SA15-Q207" scored="1" duration="379.430" durationfirstattempt="17.053" durationrationale="83.222" durationsecondattempt="279.155" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="7e2a0915-3c26-4e34-b00e-1402c7b9d169" name="SA15-Q339" scored="0" duration="471.267" durationfirstattempt="6.731" durationrationale="11.503" durationsecondattempt="453.033" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="D" score="0" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="816ed52d-2901-4a13-a1d2-90e2c3a4cd08" name="SA16: Question 54" scored="1" duration="71.599" durationfirstattempt="46.6" durationrationale="19.282" durationsecondattempt="5.717" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="b6142e3e-9b2a-4130-87a4-71b98a9d923d" name="SA15-Q40" scored="1" duration="29.730" durationfirstattempt="13.447" durationrationale="10.65" durationsecondattempt="5.633" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="6fe257ba-2f96-49ba-b419-0ae5b8c75189" name="SA12-S3-Q109" scored="1" duration="36.059" durationfirstattempt="18.282" durationrationale="9.366" durationsecondattempt="8.411" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="587a2ee0-05ac-4f4a-aaf4-beab64339773" name="SA13-Q190.9" scored="1" duration="32.165" durationfirstattempt="11.917" durationrationale="13.056" durationsecondattempt="7.192" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="2d9e5fe7-029c-4f7b-a2a2-e9db7fb17ddf" name="SA16: Question 183" scored="1" duration="28.230" durationfirstattempt="10.982" durationrationale="11.728" durationsecondattempt="5.52" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="1228ab27-813c-465c-9204-8aa769d8a81e" name="SA13-S1-Q16.5" scored="1" duration="47.659" durationfirstattempt="30.462" durationrationale="9.705" durationsecondattempt="7.492" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="1cd3424f-4156-4677-ac66-d7a17c558c6f" name="SA16: Question 51" scored="1" duration="55.021" durationfirstattempt="37.425" durationrationale="10.254" durationsecondattempt="7.342" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="e1e2062a-b51f-431f-93b4-d894a23148ab" name="SA16: Question 176" scored="1" duration="123.436" durationfirstattempt="104.384" durationrationale="10.608" durationsecondattempt="8.444" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="040525f3-f21b-48c4-843d-3877b8d15cf1" name="SA12-S2-Q62" scored="1" duration="59.756" durationfirstattempt="41.405" durationrationale="10.987" durationsecondattempt="7.364" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="0aca37d4-9c81-4531-a550-7a64c5c3524e" name="SA15-Q104" scored="1" duration="56.018" durationfirstattempt="27.362" durationrationale="15.398" durationsecondattempt="13.258" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="cd96dbbd-3241-44f3-9cc9-fe0168d68f87" name="SA14_28" scored="1" duration="360.275" durationfirstattempt="344.511" durationrationale="9.358" durationsecondattempt="6.406" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="a7d1a211-a869-4823-a9d6-af28e729be83" name="SA15-Q128" scored="1" duration="35.701" durationfirstattempt="20.999" durationrationale="7.888" durationsecondattempt="6.814" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="ef8c0c2a-54b6-4adc-bc31-8cf67319dab3" name="SA16: Question 45" scored="1" duration="268.105" durationfirstattempt="14.74" durationrationale="34.792" durationsecondattempt="218.573" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="a3bcff57-f84e-4bcc-8e0f-b2c7775940c0" name="SA13-Q55" scored="1" duration="22.642" durationfirstattempt="10.776" durationrationale="5.828" durationsecondattempt="6.038" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="01a1db77-e038-4713-8e0d-67bf1882c7a1" name="SA15-Q84" scored="1" duration="31.154" durationfirstattempt="13.781" durationrationale="11.861" durationsecondattempt="5.512" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="d266b07f-d7c9-4706-911c-7e3386f5f4ed" name="SA16: Question 116" scored="1" duration="56.796" durationfirstattempt="37.281" durationrationale="12.096" durationsecondattempt="7.419" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="a6fc35e0-2822-4c6c-a8dd-dd2323e645aa" name="SA16: Question 99" scored="1" duration="25.291" durationfirstattempt="13.507" durationrationale="6.384" durationsecondattempt="5.4" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="f2f089ef-94a8-460c-ae8c-15659a75c93a" name="SA16: Question 67" scored="1" duration="43.106" durationfirstattempt="12.973" durationrationale="20.521" durationsecondattempt="9.612" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="fbd31f44-d894-41d3-9f48-ce085bc45a2f" name="SA13-S1-Q13.2" scored="1" duration="43.764" durationfirstattempt="24.858" durationrationale="10.407" durationsecondattempt="8.499" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="3ac35775-ac45-4677-ad94-3da432f4760d" name="SA16: Question 66" scored="1" duration="21.415" durationfirstattempt="8.809" durationrationale="7.144" durationsecondattempt="5.462" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="5326b342-252a-4458-b73b-3b8e2c8faee3" name="SA12-S2-Q76" scored="1" duration="21.391" durationfirstattempt="8.605" durationrationale="7.231" durationsecondattempt="5.555" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="10e644e5-cd81-41db-8866-f3dab54bb7c4" name="SA14_85" scored="1" duration="47.749" durationfirstattempt="18.463" durationrationale="10.248" durationsecondattempt="19.038" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="2d7dd16a-5bf9-4cb9-97fd-de6311c86c0d" name="SA14_87" scored="0" duration="31.577" durationfirstattempt="10.087" durationrationale="12.157" durationsecondattempt="9.333" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="A" score="0" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="0ad6c43c-4206-4dd6-9299-6a1a1ecf5e8c" name="SA12-S2-Q37" scored="1" duration="24.893" durationfirstattempt="12.153" durationrationale="4.619" durationsecondattempt="8.121" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="78499621-7f87-41e8-b54e-ee6491fd3a23" name="SA15-Q97" scored="1" duration="606.583" durationfirstattempt="482.93" durationrationale="110.684" durationsecondattempt="12.969" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="c8b1d9be-1476-416f-9a8b-4137c22c5bb3" name="SA13-Q192.8" scored="1" duration="38.691" durationfirstattempt="24.509" durationrationale="7.74" durationsecondattempt="6.442" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="23877ae6-712d-4780-923c-6b27010e2ac2" name="SA13-Q104.5" scored="0" duration="155.216" durationfirstattempt="15.784" durationrationale="7.704" durationsecondattempt="131.728" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="A" score="0" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="76fe551d-8969-49c4-9d63-e3c3e4173c16" name="SA13-S1-Q4.2" scored="1" duration="2338.069" durationfirstattempt="2321.896" durationrationale="8.107" durationsecondattempt="8.066" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="88af2ea7-cd8a-4434-b79b-b5c8c62d3edf" name="SA15-Q130" scored="1" duration="43.707" durationfirstattempt="27.714" durationrationale="10.302" durationsecondattempt="5.691" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="6eac014b-05d5-4769-b5a2-6fb86e5895ee" name="SA16: Question 41" scored="1" duration="23.605" durationfirstattempt="9.859" durationrationale="6.995" durationsecondattempt="6.751" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="c278c8b1-b266-42a7-82dc-c496e9736d67" name="SA13-S1-Q14.2" scored="1" duration="41.717" durationfirstattempt="8.513" durationrationale="6.682" durationsecondattempt="26.522" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="dc7fc391-c91a-4aa9-929b-12c1503274a3" name="SA12-S2-Q61" scored="1" duration="1150.439" durationfirstattempt="868.308" durationrationale="32.173" durationsecondattempt="249.958" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="60aef2b5-9d34-4a15-a166-c3eb05e1afe6" name="SA13-S1-Q18.2" scored="1" duration="84.823" durationfirstattempt="11.296" durationrationale="68.449" durationsecondattempt="5.078" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="e04f26fa-b3ab-47f6-ab3f-78dba6f22c09" name="SA12-S1-Q14" scored="1" duration="18.301" durationfirstattempt="7.043" durationrationale="4.854" durationsecondattempt="6.404" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="7100d283-4159-417c-aa5b-f1534dd37cae" name="SA12-S3-Q110" scored="1" duration="83.063" durationfirstattempt="61.131" durationrationale="8.619" durationsecondattempt="13.313" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="46ff5b47-8fdf-400e-aca5-779e0142d5c7" name="SA12-S1-Q2" scored="1" duration="34.373" durationfirstattempt="16.357" durationrationale="9.843" durationsecondattempt="8.173" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="0a9a6ac6-4cb4-403d-9668-948a443b2e30" name="SA12-S1-Q15" scored="1" duration="37.391" durationfirstattempt="13.112" durationrationale="8.887" durationsecondattempt="15.392" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="e0756c5e-b3c8-49ea-9059-94082a44ee0e" name="SA13-S1-Q3.8" scored="1" duration="1529.974" durationfirstattempt="1386.926" durationrationale="29.408" durationsecondattempt="113.64" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="6703bc2e-e48c-4815-baa5-d7483194fd9e" name="SA13-S1-Q22.2" scored="1" duration="18.270" durationfirstattempt="8.049" durationrationale="2.495" durationsecondattempt="7.726" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="85838201-014b-4caa-a093-95af8f577ef3" name="SA14_86" scored="1" duration="41.088" durationfirstattempt="13.36" durationrationale="19.025" durationsecondattempt="8.703" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="d0e19918-ffc5-43fc-91ac-14907ecf484e" name="SA15-Q256" scored="1" duration="62.059" durationfirstattempt="25.753" durationrationale="21.707" durationsecondattempt="14.599" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="2fad952c-a230-4f63-b6cb-24ae4c642c59" name="SA15-Q314" scored="1" duration="60.033" durationfirstattempt="13.536" durationrationale="22.775" durationsecondattempt="23.722" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="2feff0e8-2672-454b-ac83-5d1732492f72" name="SA14_23" scored="1" duration="29.365" durationfirstattempt="13.813" durationrationale="7.595" durationsecondattempt="7.957" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="8494c143-e3e8-43ef-8672-3f451ad1cc0b" name="SA13-Q138.6" scored="1" duration="289.942" durationfirstattempt="51.582" durationrationale="230.061" durationsecondattempt="8.299" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="c01e76e1-0157-4235-a9c3-cacf6ee4709f" name="SA15-Q174" scored="1" duration="19.707" durationfirstattempt="8.59" durationrationale="5.12" durationsecondattempt="5.997" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="857829f5-66b9-4edf-972b-6ab685255d2d" name="SA14_01" scored="1" duration="33.351" durationfirstattempt="17.37" durationrationale="7.989" durationsecondattempt="7.992" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="6d4e92dd-447a-49a6-9dce-13e64890987b" name="SA16: Question 52" scored="0" duration="33.094" durationfirstattempt="9.119" durationrationale="9.88" durationsecondattempt="14.095" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="D" score="0" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="8f9cc7f4-d64d-43d8-ac0e-d8adcff1093f" name="SA16: Question 80" scored="1" duration="25.678" durationfirstattempt="11.867" durationrationale="7.22" durationsecondattempt="6.591" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="8af036e7-e19c-446d-ac88-5a7eca744b1c" name="SA16: Question 49" scored="1" duration="340.998" durationfirstattempt="136.251" durationrationale="159.23" durationsecondattempt="45.517" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="455aee55-24ea-4b02-9168-09e4347c5134" name="SA14_32" scored="1" duration="32.407" durationfirstattempt="10.076" durationrationale="8.523" durationsecondattempt="13.808" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="e094e769-9e16-413e-bfb7-ef2a127bb2fb" name="SA13-Q46" scored="1" duration="31.303" durationfirstattempt="7.425" durationrationale="18.612" durationsecondattempt="5.266" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="6b44d4aa-3d18-49fd-a155-b3835ef16b37" name="SA16: Question 189" scored="1" duration="344.430" durationfirstattempt="329.898" durationrationale="5.851" durationsecondattempt="8.681" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="d335e26b-cb55-404e-be71-7d103bfe443c" name="SA16: Question 56" scored="1" duration="25.076" durationfirstattempt="11.128" durationrationale="8.641" durationsecondattempt="5.307" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="d8782759-b7c9-4828-945c-33290f86ee61" name="SA16: Question 96" scored="1" duration="46.762" durationfirstattempt="18.238" durationrationale="11.254" durationsecondattempt="17.27" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="87b57fd2-2f16-404f-a421-15f5837291d7" name="SA15-Q48" scored="1" duration="30.127" durationfirstattempt="14.255" durationrationale="6.744" durationsecondattempt="9.128" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="e031fe65-c267-4f67-bedc-53bef4f49e2b" name="SA13-Q180.8" scored="1" duration="214.543" durationfirstattempt="14.144" durationrationale="82.579" durationsecondattempt="117.82" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="1858940e-b6dc-4de1-8ee6-7d6442806b62" name="SA13-Q31" scored="1" duration="18.307" durationfirstattempt="10.591" durationrationale="2.51" durationsecondattempt="5.206" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="11c32888-b6d3-41c9-9e73-2367a4e510c8" name="SA15-Q200" scored="1" duration="62.969" durationfirstattempt="36.352" durationrationale="6.678" durationsecondattempt="19.939" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="0c1756fd-5042-4347-b237-6b298d87715a" name="SA13-Q89" scored="1" duration="22.253" durationfirstattempt="6.386" durationrationale="7.28" durationsecondattempt="8.587" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="e502997b-fd39-408d-833d-0430005dbd3f" name="SA16: Question 81" scored="1" duration="21.865" durationfirstattempt="7.307" durationrationale="6.499" durationsecondattempt="8.059" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="aa8ec50e-8ea9-4b64-b835-703b50239118" name="SA16: Question 39" scored="1" duration="24.059" durationfirstattempt="24.059" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="1e48ceda-b375-4bb1-bb0b-312b603530f8" name="SA15-Q98" scored="1" duration="32.518" durationfirstattempt="16.741" durationrationale="7.565" durationsecondattempt="8.212" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="cdf93d19-1f1a-45d3-b03b-5ce4f02198b2" name="SA13-Q122.3" scored="1" duration="446.393" durationfirstattempt="417.723" durationrationale="8.954" durationsecondattempt="19.716" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="db8169af-063d-48c6-995c-a86d56effe92" name="SA14_17" scored="1" duration="22.082" durationfirstattempt="6.782" durationrationale="7.651" durationsecondattempt="7.649" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="3a41fa50-b44a-4787-b313-69dbbef68bb5" name="SA13-S1-Q6.2" scored="1" duration="17.954" durationfirstattempt="6.408" durationrationale="4.948" durationsecondattempt="6.598" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="43dd7465-0a85-4d72-9d0e-c875ef4ac1d7" name="SA12-S6-Q179" scored="1" duration="14.956" durationfirstattempt="7.288" durationrationale="1.379" durationsecondattempt="6.289" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="975638a2-46e2-4edc-a4bd-1a89644e674e" name="SA16: Question 180" scored="1" duration="64.192" durationfirstattempt="54.032" durationrationale="1.961" durationsecondattempt="8.199" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="6cf9c4b1-7bf0-4415-a789-233420498f09" name="SA15-Q109" scored="0" duration="219.361" durationfirstattempt="194.847" durationrationale="6.388" durationsecondattempt="18.126" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="D" score="0" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="322f55e2-fa3b-479a-a882-e67f34edf332" name="SA15-Q281" scored="1" duration="248.101" durationfirstattempt="232.879" durationrationale="5.518" durationsecondattempt="9.704" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="dfef6b13-e37d-4691-9e9f-a091b57be538" name="SA12-S2-Q29" scored="1" duration="33.812" durationfirstattempt="7.797" durationrationale="19.134" durationsecondattempt="6.881" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="e4eb4c76-8fcd-4a40-88d1-e09f47d2fbc5" name="SA15-Q27" scored="1" duration="45.814" durationfirstattempt="21.944" durationrationale="17.729" durationsecondattempt="6.141" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="4eb9313f-ada0-4a49-a16a-640953ec52d2" name="SA15-Q112" scored="1" duration="49.106" durationfirstattempt="20.663" durationrationale="9.667" durationsecondattempt="18.776" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="d31ee893-ee7e-4750-95f1-9b61d2daa823" name="SA13-Q118.2" scored="1" duration="58.069" durationfirstattempt="41.865" durationrationale="9.468" durationsecondattempt="6.736" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="fc2d645e-b35b-4933-b0c6-f0e389005ca0" name="SA12-S7-Q197" scored="1" duration="44.012" durationfirstattempt="11.859" durationrationale="18.127" durationsecondattempt="14.026" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="5a3eda38-0f2d-4472-91ca-15019bd909b4" name="SA15-Q156" scored="1" duration="19.678" durationfirstattempt="8.264" durationrationale="4.02" durationsecondattempt="7.394" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="1d1d8375-dc0e-42c7-bbde-c49af57e75f2" name="SA14_56" scored="1" duration="215.009" durationfirstattempt="17.858" durationrationale="80.71" durationsecondattempt="116.441" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="f613e230-d0ba-4ad6-b935-0bc985b93e54" name="SA15-Q131" scored="1" duration="387.301" durationfirstattempt="387.301" durationrationale="0" durationsecondattempt="0" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="c22f5c3e-dd4d-4de3-b1d3-e9e2f48db546" name="SA14_07" scored="1" duration="64.652" durationfirstattempt="20.795" durationrationale="26.606" durationsecondattempt="17.251" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="f4dde959-886c-496b-b46e-9c9aec751a98" name="SA15-Q146" scored="0" duration="26.944" durationfirstattempt="11.225" durationrationale="5.818" durationsecondattempt="9.901" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="D" score="0" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="7d3c3f6d-1d1f-40fb-974a-17557fcb4927" name="SA13-Q125.6" scored="1" duration="20.924" durationfirstattempt="7.306" durationrationale="5.93" durationsecondattempt="7.688" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="ad3b1a5d-96d0-4eb5-947d-f30bea5832f7" name="SA12-S1-Q25" scored="1" duration="37.134" durationfirstattempt="20.465" durationrationale="5.77" durationsecondattempt="10.899" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="7562675e-bbb9-4a87-a6c2-65107866b9a1" name="SA12-S1-Q24" scored="1" duration="27.960" durationfirstattempt="13.651" durationrationale="7.459" durationsecondattempt="6.85" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="4fd55ec1-0510-447b-944a-8d0b5c1f6e9d" name="SA14_180" scored="1" duration="54.566" durationfirstattempt="13.681" durationrationale="8.847" durationsecondattempt="32.038" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="85975cf9-cbd7-412a-a433-1976535e1915" name="SA13-Q58" scored="1" duration="49.164" durationfirstattempt="29.261" durationrationale="9.092" durationsecondattempt="10.811" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="e679c88d-b8a8-48f7-973b-67d54d855fb0" name="SA12-S4-Q123" scored="1" duration="38.294" durationfirstattempt="22.897" durationrationale="5.729" durationsecondattempt="9.668" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="05c58448-0a2f-47e6-8600-2bb350c0b101" name="SA13-S1-Q26.2" scored="1" duration="34.017" durationfirstattempt="23.429" durationrationale="5.226" durationsecondattempt="5.362" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="5f335345-ba98-4ece-90e4-828037c9bb7f" name="SA16: Question 36" scored="0" duration="25.254" durationfirstattempt="10.347" durationrationale="7.929" durationsecondattempt="6.978" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="A" score="0" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="ab3f8c97-7e0a-4d74-8d4a-f34790ccaa10" name="SA15-Q129" scored="1" duration="43.822" durationfirstattempt="28.514" durationrationale="7.435" durationsecondattempt="7.873" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="9ca5ef4b-e8c9-4cf7-9814-4ae246ed0828" name="SA15-Q280" scored="1" duration="48.987" durationfirstattempt="24.348" durationrationale="18.634" durationsecondattempt="6.005" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="5aec6769-9414-43db-bfa3-5c8e2a3070b9" name="SA13-Q37" scored="1" duration="35.205" durationfirstattempt="19.935" durationrationale="7.482" durationsecondattempt="7.788" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="db0322d5-d48e-4e8d-af09-5ed1d922066e" name="SA15-Q161" scored="1" duration="439.889" durationfirstattempt="24.015" durationrationale="148.424" durationsecondattempt="267.45" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="3feb90ee-4425-4ebe-b7cd-2fc30f33e47b" name="SA16: Question 132" scored="1" duration="132.508" durationfirstattempt="11.1" durationrationale="29.257" durationsecondattempt="92.151" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="b9fccc72-7e04-4a36-a3ae-ff23d7d91ec9" name="SA16: Question 48" scored="1" duration="57.135" durationfirstattempt="14.012" durationrationale="32.364" durationsecondattempt="10.759" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="f55b2c8d-1663-4457-821f-730b0d3aae7d" name="SA12-S2-Q31" scored="1" duration="433.417" durationfirstattempt="416.549" durationrationale="5.385" durationsecondattempt="11.483" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="fa658b07-9236-4418-bf0e-b9d1ca4dd768" name="SA15-Q214" scored="1" duration="59.868" durationfirstattempt="30.77" durationrationale="5.947" durationsecondattempt="23.151" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="b815b0e6-670b-4268-8538-fe7ed1bae901" name="SA15-Q290" scored="1" duration="167.933" durationfirstattempt="8.218" durationrationale="25.149" durationsecondattempt="134.566" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="03a4c264-5b41-443a-b13c-40d289c188bb" name="SA15-Q251" scored="1" duration="42.540" durationfirstattempt="27.574" durationrationale="6.202" durationsecondattempt="8.764" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="4e389c29-7ad2-4edf-ac58-90d6da33de60" name="SA15-Q334" scored="1" duration="327.418" durationfirstattempt="313.433" durationrationale="5.169" durationsecondattempt="8.816" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="1ae78c77-dad2-4693-a37a-08e22897e39f" name="SA15-Q83" scored="1" duration="29.945" durationfirstattempt="13.88" durationrationale="5.85" durationsecondattempt="10.215" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="a1e95c33-619a-4908-ba8a-a4dee01fe315" name="SA12-S6-Q196" scored="1" duration="25.809" durationfirstattempt="9.295" durationrationale="9.817" durationsecondattempt="6.697" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="9251dc8f-f0c7-4fd1-9e31-9cdf4e50f8f9" name="SA15-Q138" scored="1" duration="48.446" durationfirstattempt="33.314" durationrationale="5.622" durationsecondattempt="9.51" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="31b3c1e2-11ee-4d62-a6c1-0d0a53c025fe" name="SA12-S4-Q148" scored="1" duration="18.963" durationfirstattempt="6.395" durationrationale="6.325" durationsecondattempt="6.243" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="c6086dcb-966e-4457-b4c5-1f30a4c9d872" name="SA12-S6-Q191" scored="1" duration="36.726" durationfirstattempt="27.18" durationrationale="2.531" durationsecondattempt="7.015" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="0273f1e1-0aa2-4e7b-9f82-b53dd15c3ab8" name="SA15-Q26" scored="1" duration="39.940" durationfirstattempt="9.719" durationrationale="4.393" durationsecondattempt="25.828" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="aaa7ab71-27e3-4bea-a253-303830645f7e" name="SA15-Q18" scored="1" duration="44.607" durationfirstattempt="13.544" durationrationale="24.552" durationsecondattempt="6.511" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="1f56281c-0d89-451f-816e-47f492fb0849" name="SA12-S6-Q192" scored="1" duration="47.760" durationfirstattempt="22.33" durationrationale="6.735" durationsecondattempt="18.695" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="c0803ddd-b056-41d4-833e-9ec7f6ce2fe9" name="SA16: Question 53" scored="1" duration="130.653" durationfirstattempt="17.88" durationrationale="37.896" durationsecondattempt="74.877" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="C" correctresponse="C" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="bf4acd6d-f666-4b64-a2b2-46aca5ab022e" name="SA16: Question 37" scored="1" duration="105.558" durationfirstattempt="14.643" durationrationale="16.288" durationsecondattempt="74.627" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="ba7fde1a-9cd0-4c9b-a54f-1abbd276b04f" name="SA15-Q349" scored="1" duration="16.393" durationfirstattempt="6.015" durationrationale="4.965" durationsecondattempt="5.413" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="B" correctresponse="B" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="a8493157-3dae-4eab-85e7-1191f62e17c1" name="SA16: Question 88" scored="1" duration="28.872" durationfirstattempt="16.796" durationrationale="5.73" durationsecondattempt="6.346" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="636fb398-9d84-4e00-805b-ef6bcbccad6e" name="SA16: Question 69" scored="1" duration="26.286" durationfirstattempt="10.185" durationrationale="6.929" durationsecondattempt="9.172" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="72a2261c-27f7-4226-95f1-6652ee19f720" name="SA15-Q227" scored="1" duration="36.721" durationfirstattempt="21.31" durationrationale="7.064" durationsecondattempt="8.347" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="a02c66de-68fa-4b77-88ab-d5e8d70af9ec" name="SA12-S1-Q12" scored="1" duration="30.736" durationfirstattempt="14.025" durationrationale="4.736" durationsecondattempt="11.975" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="69375842-5e60-4ad1-a43d-a8169cdc71d5" name="SA16: Question 186" scored="1" duration="44.390" durationfirstattempt="15.855" durationrationale="5.931" durationsecondattempt="22.604" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="E" correctresponse="E" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="6c62bc73-af07-4fe3-bd9b-ecbebc162623" name="SA16: Question 77" scored="1" duration="25.391" durationfirstattempt="10.356" durationrationale="4.194" durationsecondattempt="10.841" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="A" correctresponse="A" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+        <itemgroup id="733eeadb-7ef9-4379-b2f7-7aa86a75ec27" name="SA13-S1-Q10.2" scored="1" duration="29.551" durationfirstattempt="8.304" durationrationale="12.931" durationsecondattempt="8.316" progid="UTDP.MultiChoiceItem.1" weight="1" presented="1" visited="1">
+          <item response="D" correctresponse="D" score="1" scoremin="0" scoremax="1" scorenom="0" complete="1" skipped="0" marked="0"/>
+        </itemgroup>
+      </section>
+    </sections>
+    <categories>
+      <category name="hand_surgery" count="175" countcorrect="161" countincorrect="11" countskipped="3" countmarked="0"/>
+    </categories>
+  </exam>
+</simplexmlresult>
