@@ -1,6 +1,5 @@
 import { h } from 'hyperapp'
-import { sortByProp } from '../../lib/lib'
-import { groupByItemId } from './counts'
+import { sortAndGroupRecords } from './counts'
 import  { iscorrect,
           total_duration,
           duration_of,
@@ -42,6 +41,6 @@ const ItemGroup = ({item}) => (
 )
 
 export const Items = ({records}) => (
-  groupByItemId( records.sort(sortByProp('timestamp')) )
+  sortAndGroupRecords(records)
     .map( it => (<ItemGroup item={it} />))
 )

@@ -1,4 +1,6 @@
-export const groupByItemId = arr => {
+import { sortByProp } from '../../lib/lib'
+
+const groupByItemId = arr => {
   return arr.reduce((rv, x) => {
     let v = x.context.item_id;
     let el = rv.find((r) => r && r[0].context.item_id === v);
@@ -7,3 +9,7 @@ export const groupByItemId = arr => {
     return rv;
   }, []);
 };
+
+export const sortAndGroupRecords = lrs => (
+  groupByItemId( lrs.sort(sortByProp('timestamp')) )
+)
