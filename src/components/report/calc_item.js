@@ -5,7 +5,7 @@ const gradedAttempt = rs => correctAttempt(rs) || getByVerb('second_attempt')(rs
 export const iscorrect = rs => correctAttempt(rs) ? 1 : 0
 
 export const total_duration = rs => (
-  rs.reduce((t, r) => (t + r.context.timing.timer.total), 0)
+  rs.reduce((t, r) => (t + r.context.timing.timer.total), 0).toFixed(3)
 )
 
 export const duration_of = verb => rs => {
