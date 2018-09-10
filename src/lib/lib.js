@@ -19,6 +19,10 @@ export const display_time = (stamp) => {
   hours = hours === 0 ? 12 : hours;
   return `${year}-${month}-${day} ${hours}:${minutes} ${suffix}`
 }
+export const datestamp = record => {
+  return display_time(record.context.timing.timestamp) + ' ' + record.context.timing.timezone;
+}
+
 
 export const time_from_seconds = (time) => {
   let hrs = Math.floor(time / 3600)

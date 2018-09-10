@@ -1,31 +1,38 @@
-import { h } from 'hyperapp'
-import { Items } from './items'
+import  { h } from 'hyperapp'
+import  { Items } from './items'
+import  { datestamp } from '../../lib/lib'
+import  { total_duration } from './calc_item'
+import  { count_correct,
+          count_incorrect,
+          count_skipped,
+          percentage_correct } from './calc_score'
 
-const Section = ({state}) => (
-  <section name="scnPSCOS1"
-    count="50"
-    countcorrect="49"
-    countincorrect="1"
-    countskipped="0"
+
+const Section = ({data}) => (
+  <section name="hand_exam"
+    count="175"
+    countcorrect={count_correct(data)}
+    countincorrect={count_incorrect(data)}
+    countskipped={count_skipped(data)}
     countmarked="0"
-    startdatetime="2017-04-21T12:00:31"
-    enddatetime="2017-04-21T12:14:32"
-    duration="802"
+    startdatetime={datestamp(data[0])}
+    enddatetime={datestamp(data[data.length - 1])}
+    duration={total_duration(data)}
     >
     <score
-      scorevalue="50"
-      scoredisplay="50.00"
+      scorevalue={count_correct(data)}
+      scoredisplay={percentage_correct(data)}
       passindicator="p"
       scoremin="0"
-      scoremax="50"
+      scoremax="175"
       scorecut="0"
       />
-    <Items records={state.displaydata} />
+    <Items records={data} />
   </section>
 )
 
-export const Sections = ({state}) => (
+export const Sections = ({data}) => (
   <sections>
-    <Section state={state} />
+    <Section data={data} />
   </sections>
 )
