@@ -17,11 +17,24 @@ export const correctAnswerLetter = (rs, item) => {
   const letters = "ABCDE".split('')
   const ga = gradedAttempt(rs)
   let result = {guess: '', correct: ''}
-  item.responses.forEach((r,i) => {
-    if(r.displayText === ga.context.chosen_answer) { result.guess = letters[i] }
-    if(r.type[0] === 'correct') { result.correct = letters[i] }
-  })
-  return result
+  if (ga === undefined) {
+    // the user attempted the first time, got it wrong, didnt do a 2nd attempt
+    return ""
+  }
+  try {
+    item.responses.forEach((r,i) => {
+      if(r.displayText === ga.context.chosen_answer) { result.guess = letters[i] }
+      if(r.type[0] === 'correct') { result.correct = letters[i] }
+    })
+    return result
+  }
+  catch (err) {
+    console.warn("RS",rs)
+    console.warn("Item",item)
+    console.warn("GA",ga)
+    return ""
+  }
+
 }
 
 export const presented = (rs, seen) => seen || rs.length > 0 ? 1 : 0

@@ -40,6 +40,14 @@ button.fetch_users {
   background: rgb(31, 202, 105);
   border: 3px solid rgb(31, 114, 72);
 }
+button#download_reportdoc {
+  text-align: center;
+  padding: 2pt 5pt;
+  display: block;
+  margin: 10pt auto;
+  background: #dedede;
+  border: 3px solid #ccc;
+}
 div.tables {
   // max-height: 300px;
   // overflow-y: scroll;

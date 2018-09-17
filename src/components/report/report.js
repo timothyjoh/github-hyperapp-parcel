@@ -1,5 +1,4 @@
 import { h } from 'hyperapp'
-import { withRender } from 'hyperapp-render'
 import { Demographics } from './demographics'
 import { Exam } from './exam'
 import { sortAndGroupRecords } from './counts'
@@ -13,13 +12,14 @@ import  { count_correct,
 const DocXML = ({state}) => (
   /* <?xml version="1.0" encoding="UTF-8"?> */
   <simpleXMLResult xmlns="http://sdk.prometric.com/schemas/SimpleXMLResults1_3" version="1.3">
-    <Demographics user={state.user} />
+    <Demographics state={state} />
     { state.displaydata[0] ? (<Exam data={state.displaydata} state={state} />) : null }
   </simpleXMLResult>
 )
 
 export const Report = ({state}) => (
 <div id='report'>
+  <button id='download_reportdoc'>Download Report XML</button>
   <ul class='data'>
     <li>Records: {state.displaydata.length}</li>
     <li>Unique Items: {sortAndGroupRecords(state.displaydata).length}</li>
@@ -29,8 +29,8 @@ export const Report = ({state}) => (
     <li>Score: {percentage_correct(state.displaydata)}</li>
     <li>Duration: {time_from_seconds(total_duration(state.displaydata))}</li>
   </ul>
-  <textarea>
+  <script id='reportdoc'>
     <DocXML state={state} />
-  </textarea>
+  </script>
 </div>
 )
