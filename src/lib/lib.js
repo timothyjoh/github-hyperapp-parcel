@@ -1,6 +1,7 @@
 export const uniq = ar => ar.filter( (v, i, s) => s.indexOf(v) === i )
 export const pluck = (ele) => (arr) => arr.map( a => a[ele] )
 export const sortByProp = (p) => (a,b) => a[p] < b[p] ? -1 : (a[p] > b[p] ? 1 : 0)
+export const stripBadChars = str => str.replace(/\W/g, '-')
 
 export const display_time = (stamp) => {
   let currentDate = new Date(stamp),

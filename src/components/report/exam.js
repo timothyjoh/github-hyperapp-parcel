@@ -1,7 +1,7 @@
 import { h } from 'hyperapp'
 import { Categories } from './categories'
 import { Sections } from './sections'
-import { datestamp } from '../../lib/lib'
+import { datestamp, stripBadChars } from '../../lib/lib'
 import  { total_duration } from './calc_item'
 import  { count_correct,
           count_incorrect,
@@ -10,7 +10,7 @@ import  { count_correct,
 
 export const Exam = ({data, state}) => (
   <exam
-    resourcefilename={state.user.email + '.xml'}
+    resourcefilename={`${state.user.external_id}-${stripBadChars(state.user.lastname).toLowerCase()}.xml`}
     resourceversion="1.0"
     name="MOC-HANDEXAM"
     examformname="HANDEXAM"

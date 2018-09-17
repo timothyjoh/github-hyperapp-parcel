@@ -1,4 +1,4 @@
-const stripBadChars = email => email.replace(/\W/g, '-')
+import { stripBadChars } from '../lib/lib'
 
 const download = (filename, body) => {
   let element = document.createElement('a');
