@@ -4,6 +4,6 @@ export const state = {
   user: {},
   lrsdata: [],
   items: [],
-  sequence: [],
+  seen: [],
   displaydata: [],
 }

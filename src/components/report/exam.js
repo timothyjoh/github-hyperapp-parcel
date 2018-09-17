@@ -36,6 +36,6 @@ export const Exam = ({data, state}) => (
       scorecut="0"
       />
     <Sections data={data} state={state} />
-    <Categories data={data} sequence={sequence} />
+    <Categories data={data} state={state} />
   </exam>
 )

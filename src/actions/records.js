@@ -15,5 +15,5 @@ export const get_records = ({activity_id, user_id}) => (state, actions) => {
 };
 
 export const set_lrsdata = data => (
-  { lrsdata: data, displaydata: data.lrs, items: data.items, sequence: data.sequence }
+  { lrsdata: data, displaydata: data.lrs, items: data.items, seen: data.sequence.previousMeasures.values }
 );

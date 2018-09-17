@@ -4,6 +4,7 @@ import  { iscorrect,
           total_duration,
           duration_of,
           attempted,
+          presented,
           correctAnswerLetter,
           completed,
           skipped
@@ -44,5 +45,5 @@ export const Items = ({data, state}) => (
   sortAndGroupRecords(data)
     .map( ir => (<ItemGroup records={ir} 
       item={state.items.filter( i => i.id === ir[0].context.item_id)[0]}
-      seen={state.sequence.previousMeasures.values.indxOf(ir[0].context.item_id) > -1} />))
+      seen={state.seen.indexOf(ir[0].context.item_id) > -1} />))
 )
