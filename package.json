@@ -28,6 +28,7 @@
     "parcel-bundler": "^1.9.7"
   },
   "dependencies": {
-    "app.css": "^0.1.2"
+    "app.css": "^0.1.2",
+    "hyperapp-render": "^2.1.0"
   }
 }

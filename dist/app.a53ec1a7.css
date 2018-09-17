@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c");
+body, * {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 10pt; }
+
+div.inputs, div.tables {
+  display: flex;
+  justify-content: space-around;
+  align-content: flex-start; }
+
+h3 {
+  text-align: center;
+  font-size: 24pt;
+  font-weight: normal; }
+  h3 em {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #9c4242;
+    display: block; }
+
+ul.data {
+  text-align: center;
+  font-weight: normal;
+  color: #501;
+  display: block;
+  margin: 0px auto 20px;
+  padding-inline-start: 0px; }
+
+ul.data li {
+  display: inline;
+  margin: 0 1em; }
+
+button.fetch_users {
+  text-align: center;
+  padding: 2pt 5pt;
+  display: block;
+  margin: 10pt auto;
+  background: #1fca69;
+  border: 3px solid #1f7248; }
+
+button#download_reportdoc {
+  text-align: center;
+  padding: 2pt 5pt;
+  display: block;
+  margin: 10pt auto;
+  background: #dedede;
+  border: 3px solid #ccc; }
+
+div.report {
+  min-height: 50px;
+  overflow-y: scroll;
+  border: 3px solid #c83; }
+
+div.tables table {
+  margin: 2em; }
+
+div.inputs input {
+  padding: 4px 10px;
+  border: none;
+  border-bottom: 1px dotted #222;
+  min-width: 24em; }
+
+table tr td {
+  color: #444; }
+
+table tr td.tiny {
+  font-size: 8pt; }
+  table tr td.tiny a {
+    font-size: 8pt;
+    color: #79c; }
+
+table td {
+  border: 1px solid #ddd;
+  padding: 1em 2em;
+  text-align: center; }
+
+table#datatable {
+  max-width: 15em; }
+
+table#usertable {
+  max-width: 25%; }
+  table#usertable a {
+    cursor: hand;
+    border-bottom: 1px dotted #555; }
