@@ -10,7 +10,6 @@ import  { count_correct,
           percentage_correct } from './calc_score'
 
 const DocXML = ({state}) => (
-  /* <?xml version="1.0" encoding="UTF-8"?> */
   <simpleXMLResult xmlns="http://sdk.prometric.com/schemas/SimpleXMLResults1_3" version="1.3">
     <Demographics state={state} />
     { state.displaydata[0] ? (<Exam data={state.displaydata} state={state} />) : null }
@@ -21,6 +20,8 @@ export const Report = ({state}) => (
 <div id='report'>
   <button id='download_reportdoc'>Download Report XML</button>
   <ul class='data'>
+    <li>Board ID: {state.user.external_id}</li>
+    <li>Name: {state.user.firstname} {state.user.lastname}</li>
     <li>Records: {state.displaydata.length}</li>
     <li>Unique Items: {sortAndGroupRecords(state.displaydata).length}</li>
     <li>Correct: {count_correct(state.displaydata)}</li>

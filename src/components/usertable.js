@@ -1,10 +1,10 @@
 import { h } from 'hyperapp'
 import { uniq, pluck } from '../lib/lib'
 
-const UserRow = ({id, email, clickFn}) => (
+const UserRow = ({user, clickFn}) => (
   <tr>
     <td class='tiny'>
-      <a onclick={ (e) => clickFn(id) }>{email}</a>
+      <a onclick={ (e) => clickFn(user.id) }>{user.external_id || 'XXX'} - {user.email}</a>
       </td>
   </tr>
 )
@@ -16,9 +16,7 @@ export const UserTable = ({ users, select }) => (
   </thead>
   <tbody>
     {users.map( user => (
-      <UserRow
-        id={user.id}
-        email={user.email}
+      <UserRow user={user}
         clickFn={select}
       ></UserRow>
     ))}

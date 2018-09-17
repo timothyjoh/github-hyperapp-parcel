@@ -1,4 +1,4 @@
-const simpleEmail = email => email.replace(/\W/g, '-')
+const stripBadChars = email => email.replace(/\W/g, '-')
 
 const download = (filename, body) => {
   let element = document.createElement('a');
@@ -14,8 +14,9 @@ const download = (filename, body) => {
 export const setup_download_button = () => {
   console.log("setup_download_button")
   document.getElementById('download_reportdoc').addEventListener('click', () => {
+    const prefix = '<?xml version="1.0" encoding="UTF-8"?>';
     const body = document.getElementById('reportdoc').innerHTML;
-    const filename = simpleEmail(window.__state.user.email) + ".xml";
-    download(filename, body);
+    const filename = `${window.__state.user.external_id}-${stripBadChars(window.__state.user.lastname).toLowerCase()}.xml`;
+    download(filename, prefix+body);
   })  
 }
