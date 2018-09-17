@@ -8,9 +8,9 @@ import  { count_correct,
           count_skipped,
           percentage_correct } from './calc_score'
 
-export const Exam = ({data, user}) => (
+export const Exam = ({data, state}) => (
   <exam
-    resourcefilename={user.email + '.xml'}
+    resourcefilename={state.user.email + '.xml'}
     resourceversion="1.0"
     name="MOC-HANDEXAM"
     examformname="HANDEXAM"
@@ -35,7 +35,7 @@ export const Exam = ({data, user}) => (
       scoremax="175"
       scorecut="0"
       />
-    <Sections data={data} />
-    <Categories data={data} />
+    <Sections data={data} state={state} />
+    <Categories data={data} sequence={sequence} />
   </exam>
 )

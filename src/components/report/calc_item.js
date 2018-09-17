@@ -13,20 +13,21 @@ export const duration_of = verb => rs => {
   return r ? r.context.timing.timer.total : 0
 }
 
-export const correctAnswerLetter = rs => {
+export const correctAnswerLetter = (rs, item) => {
   const letters = "ABCDE".split('')
   const ga = gradedAttempt(rs)
   let result = {guess: '', correct: ''}
-  ga.context.item.responses.forEach((r,i) => {
+  item.responses.forEach((r,i) => {
     if(r.displayText === ga.context.chosen_answer) { result.guess = letters[i] }
     if(r.type[0] === 'correct') { result.correct = letters[i] }
   })
   return result
 }
 
+export const presented = (rs, seen) => seen || rs.length > 0 ? 1 : 0
 export const attempted = rs => rs.find(i => i.verb === 'first_attempt') ? 1 : 0
 export const completed = rs => skipped(rs) ? 0 : 1
-export const skipped = rs => {
+export const skipped = (rs, seen) => {
   let first = getByVerb('first_attempt')(rs)
   let second = getByVerb('second_attempt')(rs)
   let cor = iscorrect(rs)

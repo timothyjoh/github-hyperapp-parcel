@@ -26,7 +26,7 @@ export const Report = ({state}) => (
   {/* <?xml version="1.0" encoding="UTF-8"?> */}
   <simpleXMLResult xmlns="http://sdk.prometric.com/schemas/SimpleXMLResults1_3" version="1.3">
     <Demographics user={state.user} />
-    { state.displaydata[0] ? (<Exam data={state.displaydata} user={state.user} />) : null }
+    { state.displaydata[0] ? (<Exam data={state.displaydata} state={state} />) : null }
   </simpleXMLResult>
   </script>
 </div>

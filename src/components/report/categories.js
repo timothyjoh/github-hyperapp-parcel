@@ -3,7 +3,7 @@ import  { count_correct,
           count_incorrect,
           count_skipped } from './calc_score'
 
-export const Categories = ({data}) => (
+export const Categories = ({data, state}) => (
   <categories>
     <category name="hand_surgery"
       count="175"

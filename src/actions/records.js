@@ -14,6 +14,6 @@ export const get_records = ({activity_id, user_id}) => (state, actions) => {
   return { activity_id, displaydata: [] }
 };
 
-export const set_lrsdata = lrsdata => (
-  { lrsdata, displaydata: lrsdata.lrsEvents }
+export const set_lrsdata = data => (
+  { lrsdata: data, displaydata: data.lrs, items: data.items, sequence: data.sequence }
 );

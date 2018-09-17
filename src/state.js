@@ -3,5 +3,7 @@ export const state = {
   users: [],
   user: {},
   lrsdata: [],
+  items: [],
+  sequence: [],
   displaydata: [],
 }
