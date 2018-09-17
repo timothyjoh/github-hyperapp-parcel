@@ -477,6 +477,9 @@ var sortByProp = exports.sortByProp = function sortByProp(p) {
     return a[p] < b[p] ? -1 : a[p] > b[p] ? 1 : 0;
   };
 };
+var stripBadChars = exports.stripBadChars = function stripBadChars(str) {
+  return str.replace(/\W/g, '-');
+};
 
 var display_time = exports.display_time = function display_time(stamp) {
   var currentDate = new Date(stamp),
@@ -1066,7 +1069,7 @@ var Exam = exports.Exam = function Exam(_ref) {
   return (0, _hyperapp.h)(
     'exam',
     {
-      resourcefilename: state.user.email + '.xml',
+      resourcefilename: state.user.external_id + '-' + (0, _lib.stripBadChars)(state.user.lastname).toLowerCase() + '.xml',
       resourceversion: '1.0',
       name: 'MOC-HANDEXAM',
       examformname: 'HANDEXAM',
@@ -1402,9 +1405,9 @@ var set_lrsdata = exports.set_lrsdata = function set_lrsdata(data) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var stripBadChars = function stripBadChars(email) {
-  return email.replace(/\W/g, '-');
-};
+exports.setup_download_button = undefined;
+
+var _lib = require('../lib/lib');
 
 var download = function download(filename, body) {
   var element = document.createElement('a');
@@ -1422,11 +1425,11 @@ var setup_download_button = exports.setup_download_button = function setup_downl
   document.getElementById('download_reportdoc').addEventListener('click', function () {
     var prefix = '<?xml version="1.0" encoding="UTF-8"?>';
     var body = document.getElementById('reportdoc').innerHTML;
-    var filename = window.__state.user.external_id + '-' + stripBadChars(window.__state.user.lastname).toLowerCase() + '.xml';
+    var filename = window.__state.user.external_id + '-' + (0, _lib.stripBadChars)(window.__state.user.lastname).toLowerCase() + '.xml';
     download(filename, prefix + body);
   });
 };
-},{}],"src\\actions\\users.js":[function(require,module,exports) {
+},{"../lib/lib":"src\\lib\\lib.js"}],"src\\actions\\users.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
