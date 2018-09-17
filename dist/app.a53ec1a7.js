@@ -520,8 +520,7 @@ var _hyperapp = require('hyperapp');
 var _lib = require('../lib/lib');
 
 var UserRow = function UserRow(_ref) {
-  var id = _ref.id,
-      email = _ref.email,
+  var user = _ref.user,
       clickFn = _ref.clickFn;
   return (0, _hyperapp.h)(
     'tr',
@@ -532,9 +531,11 @@ var UserRow = function UserRow(_ref) {
       (0, _hyperapp.h)(
         'a',
         { onclick: function onclick(e) {
-            return clickFn(id);
+            return clickFn(user.id);
           } },
-        email
+        user.external_id || 'XXX',
+        ' - ',
+        user.email
       )
     )
   );
@@ -559,9 +560,7 @@ var UserTable = exports.UserTable = function UserTable(_ref2) {
       'tbody',
       null,
       users.map(function (user) {
-        return (0, _hyperapp.h)(UserRow, {
-          id: user.id,
-          email: user.email,
+        return (0, _hyperapp.h)(UserRow, { user: user,
           clickFn: select
         });
       })
@@ -1120,14 +1119,11 @@ var _calc_score = require('./calc_score');
 
 var DocXML = function DocXML(_ref) {
   var state = _ref.state;
-  return (
-    /* <?xml version="1.0" encoding="UTF-8"?> */
-    (0, _hyperapp.h)(
-      'simpleXMLResult',
-      { xmlns: 'http://sdk.prometric.com/schemas/SimpleXMLResults1_3', version: '1.3' },
-      (0, _hyperapp.h)(_demographics.Demographics, { state: state }),
-      state.displaydata[0] ? (0, _hyperapp.h)(_exam.Exam, { data: state.displaydata, state: state }) : null
-    )
+  return (0, _hyperapp.h)(
+    'simpleXMLResult',
+    { xmlns: 'http://sdk.prometric.com/schemas/SimpleXMLResults1_3', version: '1.3' },
+    (0, _hyperapp.h)(_demographics.Demographics, { state: state }),
+    state.displaydata[0] ? (0, _hyperapp.h)(_exam.Exam, { data: state.displaydata, state: state }) : null
   );
 };
 
@@ -1144,6 +1140,20 @@ var Report = exports.Report = function Report(_ref2) {
     (0, _hyperapp.h)(
       'ul',
       { 'class': 'data' },
+      (0, _hyperapp.h)(
+        'li',
+        null,
+        'Board ID: ',
+        state.user.external_id
+      ),
+      (0, _hyperapp.h)(
+        'li',
+        null,
+        'Name: ',
+        state.user.firstname,
+        ' ',
+        state.user.lastname
+      ),
       (0, _hyperapp.h)(
         'li',
         null,
@@ -1392,7 +1402,7 @@ var set_lrsdata = exports.set_lrsdata = function set_lrsdata(data) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var simpleEmail = function simpleEmail(email) {
+var stripBadChars = function stripBadChars(email) {
   return email.replace(/\W/g, '-');
 };
 
@@ -1410,9 +1420,10 @@ var download = function download(filename, body) {
 var setup_download_button = exports.setup_download_button = function setup_download_button() {
   console.log("setup_download_button");
   document.getElementById('download_reportdoc').addEventListener('click', function () {
+    var prefix = '<?xml version="1.0" encoding="UTF-8"?>';
     var body = document.getElementById('reportdoc').innerHTML;
-    var filename = simpleEmail(window.__state.user.email) + ".xml";
-    download(filename, body);
+    var filename = window.__state.user.external_id + '-' + stripBadChars(window.__state.user.lastname).toLowerCase() + '.xml';
+    download(filename, prefix + body);
   });
 };
 },{}],"src\\actions\\users.js":[function(require,module,exports) {
