@@ -3,7 +3,7 @@ import { Demographics } from './demographics'
 import { Exam } from './exam'
 import { sortAndGroupRecords } from './counts'
 import  { total_duration } from './calc_item'
-import { time_from_seconds } from '../../lib/lib'
+import  { time_from_seconds } from '../../lib/lib'
 import  { count_correct,
           count_skipped,
           count_incorrect,
@@ -16,12 +16,12 @@ const DocXML = ({state}) => (
   </simpleXMLResult>
 )
 
+const DownloadReportButton = ({disabled}) => (
+  <button id='download_reportdoc' disabled={disabled ? 'disabled' : ''}>{disabled ? 'Loading...' : 'Download Report XML'}</button>
+)
 export const Report = ({state}) => (
 <div id='report'>
-  <button id='download_reportdoc'>Download Report XML</button>
   <ul class='data'>
-    <li>Board ID: {state.user.external_id}</li>
-    <li>Name: {state.user.firstname} {state.user.lastname}</li>
     <li>Records: {state.displaydata.length}</li>
     <li>Unique Items: {sortAndGroupRecords(state.displaydata).length}</li>
     <li>Correct: {count_correct(state.displaydata)}</li>
@@ -33,5 +33,6 @@ export const Report = ({state}) => (
   <script id='reportdoc'>
     <DocXML state={state} />
   </script>
+  <DownloadReportButton disabled={state.displaydata.length === 0} />
 </div>
 )

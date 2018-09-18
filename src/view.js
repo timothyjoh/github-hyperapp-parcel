@@ -14,16 +14,16 @@ const no_user = actions => (
 
 const selected_user = user => (
   <h3>
-    <em>{ user.id }</em>
     { user.email }
+    &mdash;
+    {user.firstname} {user.lastname}
+    <em>{ user.external_id }</em>
   </h3>
 )
 
 export const view = (state, actions) => (
   <section>
     <h2>Search Propel2 LRS</h2>
-    <InputFields state={state} actions={actions} />
-    <br />
     { state.user.id ? selected_user(state.user) : no_user(actions) }
     <Report state={state}></Report>
     <div class='tables'>

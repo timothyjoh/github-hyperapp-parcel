@@ -450,6 +450,8 @@ var state = exports.state = {
   users: [],
   user: {},
   lrsdata: [],
+  items: [],
+  seen: [],
   displaydata: []
 };
 },{}],"src/lib/lib.js":[function(require,module,exports) {
@@ -474,6 +476,9 @@ var sortByProp = exports.sortByProp = function sortByProp(p) {
   return function (a, b) {
     return a[p] < b[p] ? -1 : a[p] > b[p] ? 1 : 0;
   };
+};
+var stripBadChars = exports.stripBadChars = function stripBadChars(str) {
+  return str.replace(/\W/g, '-');
 };
 
 var display_time = exports.display_time = function display_time(stamp) {
@@ -518,8 +523,7 @@ var _hyperapp = require('hyperapp');
 var _lib = require('../lib/lib');
 
 var UserRow = function UserRow(_ref) {
-  var id = _ref.id,
-      email = _ref.email,
+  var user = _ref.user,
       clickFn = _ref.clickFn;
   return (0, _hyperapp.h)(
     'tr',
@@ -530,9 +534,11 @@ var UserRow = function UserRow(_ref) {
       (0, _hyperapp.h)(
         'a',
         { onclick: function onclick(e) {
-            return clickFn(id);
+            return clickFn(user.id);
           } },
-        email
+        user.external_id || 'XXX',
+        ' - ',
+        user.email
       )
     )
   );
@@ -557,9 +563,7 @@ var UserTable = exports.UserTable = function UserTable(_ref2) {
       'tbody',
       null,
       users.map(function (user) {
-        return (0, _hyperapp.h)(UserRow, {
-          id: user.id,
-          email: user.email,
+        return (0, _hyperapp.h)(UserRow, { user: user,
           clickFn: select
         });
       })
@@ -753,13 +757,14 @@ exports.Demographics = undefined;
 var _hyperapp = require("hyperapp");
 
 var Demographics = exports.Demographics = function Demographics(_ref) {
-  var user = _ref.user;
+  var state = _ref.state;
   return (0, _hyperapp.h)(
     "demographics",
     { appointmentid: "", functioncode: "", workstationname: "" },
-    (0, _hyperapp.h)("demographic", { name: "CandidateFirstName", value: "" }),
-    (0, _hyperapp.h)("demographic", { name: "CandidateLastName", value: "" }),
-    (0, _hyperapp.h)("demographic", { name: "email", value: "{user.email}" })
+    (0, _hyperapp.h)("demographic", { name: "CandidateFirstName", value: state.user.firstname }),
+    (0, _hyperapp.h)("demographic", { name: "CandidateLastName", value: state.user.lastname }),
+    (0, _hyperapp.h)("demographic", { name: "AuthorizationNumber", value: state.user.external_id }),
+    (0, _hyperapp.h)("demographic", { name: "email", value: state.user.email })
   );
 };
 },{"hyperapp":"node_modules/hyperapp/src/index.js"}],"src/components/report/calc_item.js":[function(require,module,exports) {
@@ -801,21 +806,35 @@ var duration_of = exports.duration_of = function duration_of(verb) {
   };
 };
 
-var correctAnswerLetter = exports.correctAnswerLetter = function correctAnswerLetter(rs) {
+var correctAnswerLetter = exports.correctAnswerLetter = function correctAnswerLetter(rs, item) {
   var letters = "ABCDE".split('');
   var ga = gradedAttempt(rs);
   var result = { guess: '', correct: '' };
-  ga.context.item.responses.forEach(function (r, i) {
-    if (r.displayText === ga.context.chosen_answer) {
-      result.guess = letters[i];
-    }
-    if (r.type[0] === 'correct') {
-      result.correct = letters[i];
-    }
-  });
-  return result;
+  if (ga === undefined) {
+    // the user attempted the first time, got it wrong, didnt do a 2nd attempt
+    return "";
+  }
+  try {
+    item.responses.forEach(function (r, i) {
+      if (r.displayText === ga.context.chosen_answer) {
+        result.guess = letters[i];
+      }
+      if (r.type[0] === 'correct') {
+        result.correct = letters[i];
+      }
+    });
+    return result;
+  } catch (err) {
+    console.warn("RS", rs);
+    console.warn("Item", item);
+    console.warn("GA", ga);
+    return "";
+  }
 };
 
+var presented = exports.presented = function presented(rs, seen) {
+  return seen || rs.length > 0 ? 1 : 0;
+};
 var attempted = exports.attempted = function attempted(rs) {
   return rs.find(function (i) {
     return i.verb === 'first_attempt';
@@ -824,7 +843,7 @@ var attempted = exports.attempted = function attempted(rs) {
 var completed = exports.completed = function completed(rs) {
   return skipped(rs) ? 0 : 1;
 };
-var skipped = exports.skipped = function skipped(rs) {
+var skipped = exports.skipped = function skipped(rs, seen) {
   var first = getByVerb('first_attempt')(rs);
   var second = getByVerb('second_attempt')(rs);
   var cor = iscorrect(rs);
@@ -901,7 +920,8 @@ var _hyperapp = require('hyperapp');
 var _calc_score = require('./calc_score');
 
 var Categories = exports.Categories = function Categories(_ref) {
-  var data = _ref.data;
+  var data = _ref.data,
+      state = _ref.state;
   return (0, _hyperapp.h)(
     'categories',
     null,
@@ -933,39 +953,46 @@ var _calc_item = require('./calc_item');
 // but may not have attempts and LRS records
 
 var ItemGroup = function ItemGroup(_ref) {
-  var item = _ref.item;
+  var records = _ref.records,
+      item = _ref.item,
+      seen = _ref.seen;
   return (0, _hyperapp.h)(
     'itemgroup',
     {
-      id: item[0].context.item_id,
-      name: item[0].context.item.external_id[0],
-      scored: (0, _calc_item.iscorrect)(item),
-      duration: (0, _calc_item.total_duration)(item),
-      durationFirstAttempt: (0, _calc_item.duration_of)('first_attempt')(item),
-      durationRationale: (0, _calc_item.duration_of)('rationale_time')(item),
-      durationSecondAttempt: (0, _calc_item.duration_of)('second_attempt')(item),
+      id: records[0].context.item_id,
+      name: item.external_id[0],
+      scored: (0, _calc_item.iscorrect)(records),
+      duration: (0, _calc_item.total_duration)(records),
+      durationFirstAttempt: (0, _calc_item.duration_of)('first_attempt')(records),
+      durationRationale: (0, _calc_item.duration_of)('rationale_time')(records),
+      durationSecondAttempt: (0, _calc_item.duration_of)('second_attempt')(records),
       progid: 'UTDP.MultiChoiceItem.1',
       weight: '1',
-      presented: (0, _calc_item.attempted)(item),
-      visited: (0, _calc_item.attempted)(item)
+      presented: (0, _calc_item.presented)(records, seen),
+      visited: (0, _calc_item.attempted)(records)
     },
     (0, _hyperapp.h)('item', {
-      response: (0, _calc_item.correctAnswerLetter)(item).guess,
-      correctresponse: (0, _calc_item.correctAnswerLetter)(item).correct,
-      score: (0, _calc_item.iscorrect)(item),
+      response: (0, _calc_item.correctAnswerLetter)(records, item).guess,
+      correctresponse: (0, _calc_item.correctAnswerLetter)(records, item).correct,
+      score: (0, _calc_item.iscorrect)(records),
       scoremin: '0',
       scoremax: '1',
       scorenom: '0',
-      complete: (0, _calc_item.completed)(item),
-      skipped: (0, _calc_item.skipped)(item),
+      complete: (0, _calc_item.completed)(records),
+      skipped: (0, _calc_item.skipped)(records, seen),
       marked: '0' })
   );
 };
 
 var Items = exports.Items = function Items(_ref2) {
-  var records = _ref2.records;
-  return (0, _counts.sortAndGroupRecords)(records).map(function (it) {
-    return (0, _hyperapp.h)(ItemGroup, { item: it });
+  var data = _ref2.data,
+      state = _ref2.state;
+  return (0, _counts.sortAndGroupRecords)(data).map(function (ir) {
+    return (0, _hyperapp.h)(ItemGroup, { records: ir,
+      item: state.items.filter(function (i) {
+        return i.id === ir[0].context.item_id;
+      })[0],
+      seen: state.seen.indexOf(ir[0].context.item_id) > -1 });
   });
 };
 },{"hyperapp":"node_modules/hyperapp/src/index.js","./counts":"src/components/report/counts.js","./calc_item":"src/components/report/calc_item.js"}],"src/components/report/sections.js":[function(require,module,exports) {
@@ -986,38 +1013,34 @@ var _calc_item = require('./calc_item');
 
 var _calc_score = require('./calc_score');
 
-var Section = function Section(_ref) {
-  var data = _ref.data;
-  return (0, _hyperapp.h)(
-    'section',
-    { name: 'hand_exam',
-      count: '175',
-      countcorrect: (0, _calc_score.count_correct)(data),
-      countincorrect: (0, _calc_score.count_incorrect)(data),
-      countskipped: (0, _calc_score.count_skipped)(data),
-      countmarked: '0',
-      startdatetime: (0, _lib.datestamp)(data[0]),
-      enddatetime: (0, _lib.datestamp)(data[data.length - 1]),
-      duration: (0, _calc_item.total_duration)(data)
-    },
-    (0, _hyperapp.h)('score', {
-      scorevalue: (0, _calc_score.count_correct)(data),
-      scoredisplay: (0, _calc_score.percentage_correct)(data),
-      passindicator: 'p',
-      scoremin: '0',
-      scoremax: '175',
-      scorecut: '0'
-    }),
-    (0, _hyperapp.h)(_items.Items, { records: data })
-  );
-};
-
-var Sections = exports.Sections = function Sections(_ref2) {
-  var data = _ref2.data;
+var Sections = exports.Sections = function Sections(_ref) {
+  var data = _ref.data,
+      state = _ref.state;
   return (0, _hyperapp.h)(
     'sections',
     null,
-    (0, _hyperapp.h)(Section, { data: data })
+    (0, _hyperapp.h)(
+      'section',
+      { name: 'hand_exam',
+        count: '175',
+        countcorrect: (0, _calc_score.count_correct)(data),
+        countincorrect: (0, _calc_score.count_incorrect)(data),
+        countskipped: (0, _calc_score.count_skipped)(data),
+        countmarked: '0',
+        startdatetime: (0, _lib.datestamp)(data[0]),
+        enddatetime: (0, _lib.datestamp)(data[data.length - 1]),
+        duration: (0, _calc_item.total_duration)(data)
+      },
+      (0, _hyperapp.h)('score', {
+        scorevalue: (0, _calc_score.count_correct)(data),
+        scoredisplay: (0, _calc_score.percentage_correct)(data),
+        passindicator: 'p',
+        scoremin: '0',
+        scoremax: '175',
+        scorecut: '0'
+      }),
+      (0, _hyperapp.h)(_items.Items, { data: data, state: state })
+    )
   );
 };
 },{"hyperapp":"node_modules/hyperapp/src/index.js","./items":"src/components/report/items.js","../../lib/lib":"src/lib/lib.js","./calc_item":"src/components/report/calc_item.js","./calc_score":"src/components/report/calc_score.js"}],"src/components/report/exam.js":[function(require,module,exports) {
@@ -1042,11 +1065,11 @@ var _calc_score = require('./calc_score');
 
 var Exam = exports.Exam = function Exam(_ref) {
   var data = _ref.data,
-      user = _ref.user;
+      state = _ref.state;
   return (0, _hyperapp.h)(
     'exam',
     {
-      resourcefilename: user.email + '.xml',
+      resourcefilename: state.user.external_id + '-' + (0, _lib.stripBadChars)(state.user.lastname).toLowerCase() + '.xml',
       resourceversion: '1.0',
       name: 'MOC-HANDEXAM',
       examformname: 'HANDEXAM',
@@ -1071,8 +1094,8 @@ var Exam = exports.Exam = function Exam(_ref) {
       scoremax: '175',
       scorecut: '0'
     }),
-    (0, _hyperapp.h)(_sections.Sections, { data: data }),
-    (0, _hyperapp.h)(_categories.Categories, { data: data })
+    (0, _hyperapp.h)(_sections.Sections, { data: data, state: state }),
+    (0, _hyperapp.h)(_categories.Categories, { data: data, state: state })
   );
 };
 },{"hyperapp":"node_modules/hyperapp/src/index.js","./categories":"src/components/report/categories.js","./sections":"src/components/report/sections.js","../../lib/lib":"src/lib/lib.js","./calc_item":"src/components/report/calc_item.js","./calc_score":"src/components/report/calc_score.js"}],"src/components/report/report.js":[function(require,module,exports) {
@@ -1097,8 +1120,26 @@ var _lib = require('../../lib/lib');
 
 var _calc_score = require('./calc_score');
 
-var Report = exports.Report = function Report(_ref) {
+var DocXML = function DocXML(_ref) {
   var state = _ref.state;
+  return (0, _hyperapp.h)(
+    'simpleXMLResult',
+    { xmlns: 'http://sdk.prometric.com/schemas/SimpleXMLResults1_3', version: '1.3' },
+    (0, _hyperapp.h)(_demographics.Demographics, { state: state }),
+    state.displaydata[0] ? (0, _hyperapp.h)(_exam.Exam, { data: state.displaydata, state: state }) : null
+  );
+};
+
+var DownloadReportButton = function DownloadReportButton(_ref2) {
+  var disabled = _ref2.disabled;
+  return (0, _hyperapp.h)(
+    'button',
+    { id: 'download_reportdoc', disabled: disabled ? 'disabled' : '' },
+    disabled ? 'Loading...' : 'Download Report XML'
+  );
+};
+var Report = exports.Report = function Report(_ref3) {
+  var state = _ref3.state;
   return (0, _hyperapp.h)(
     'div',
     { id: 'report' },
@@ -1150,14 +1191,10 @@ var Report = exports.Report = function Report(_ref) {
     ),
     (0, _hyperapp.h)(
       'script',
-      null,
-      (0, _hyperapp.h)(
-        'simpleXMLResult',
-        { xmlns: 'http://sdk.prometric.com/schemas/SimpleXMLResults1_3', version: '1.3' },
-        (0, _hyperapp.h)(_demographics.Demographics, { user: state.user }),
-        state.displaydata[0] ? (0, _hyperapp.h)(_exam.Exam, { data: state.displaydata, user: state.user }) : null
-      )
-    )
+      { id: 'reportdoc' },
+      (0, _hyperapp.h)(DocXML, { state: state })
+    ),
+    (0, _hyperapp.h)(DownloadReportButton, { disabled: state.displaydata.length === 0 })
   );
 };
 },{"hyperapp":"node_modules/hyperapp/src/index.js","./demographics":"src/components/report/demographics.js","./exam":"src/components/report/exam.js","./counts":"src/components/report/counts.js","./calc_item":"src/components/report/calc_item.js","../../lib/lib":"src/lib/lib.js","./calc_score":"src/components/report/calc_score.js"}],"src/view.js":[function(require,module,exports) {
@@ -1197,12 +1234,16 @@ var selected_user = function selected_user(user) {
   return (0, _hyperapp.h)(
     'h3',
     null,
+    user.email,
+    '\u2014',
+    user.firstname,
+    ' ',
+    user.lastname,
     (0, _hyperapp.h)(
       'em',
       null,
-      user.id
-    ),
-    user.email
+      user.external_id
+    )
   );
 };
 
@@ -1215,8 +1256,6 @@ var view = exports.view = function view(state, actions) {
       null,
       'Search Propel2 LRS'
     ),
-    (0, _hyperapp.h)(_inputs.InputFields, { state: state, actions: actions }),
-    (0, _hyperapp.h)('br', null),
     state.user.id ? selected_user(state.user) : no_user(actions),
     (0, _hyperapp.h)(_report.Report, { state: state }),
     (0, _hyperapp.h)(
@@ -1349,10 +1388,40 @@ var get_records = exports.get_records = function get_records(_ref) {
   };
 };
 
-var set_lrsdata = exports.set_lrsdata = function set_lrsdata(lrsdata) {
-  return { lrsdata: lrsdata, displaydata: lrsdata.lrsEvents };
+var set_lrsdata = exports.set_lrsdata = function set_lrsdata(data) {
+  return { lrsdata: data, displaydata: data.lrs, items: data.items, seen: data.sequence.previousMeasures.values };
 };
-},{"debounce-promise":"node_modules/debounce-promise/dist/index.js","./api":"src/actions/api.js"}],"src/actions/users.js":[function(require,module,exports) {
+},{"debounce-promise":"node_modules/debounce-promise/dist/index.js","./api":"src/actions/api.js"}],"src/actions/download_xml.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.setup_download_button = undefined;
+
+var _lib = require('../lib/lib');
+
+var download = function download(filename, body) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(body));
+  element.setAttribute('download', filename);
+  element.innerHTML = "really download";
+  element.style.display = 'none';
+  document.getElementById('report').appendChild(element);
+  element.click();
+  document.getElementById('report').removeChild(element);
+};
+
+var setup_download_button = exports.setup_download_button = function setup_download_button() {
+  console.log("setup_download_button");
+  document.getElementById('download_reportdoc').addEventListener('click', function () {
+    var prefix = '<?xml version="1.0" encoding="UTF-8"?>';
+    var body = document.getElementById('reportdoc').innerHTML;
+    var filename = window.__state.user.external_id + '-' + (0, _lib.stripBadChars)(window.__state.user.lastname).toLowerCase() + '.xml';
+    download(filename, prefix + body);
+  });
+};
+},{"../lib/lib":"src/lib/lib.js"}],"src/actions/users.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1366,6 +1435,8 @@ var _debouncePromise2 = _interopRequireDefault(_debouncePromise);
 
 var _api = require('./api');
 
+var _download_xml = require('./download_xml');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var fetch_users = function fetch_users(actions) {
@@ -1376,6 +1447,7 @@ var fetch_users = function fetch_users(actions) {
 
 var get_users = exports.get_users = function get_users() {
   return function (state, actions) {
+    (0, _download_xml.setup_download_button)();
     fetch_users(actions).then(actions.set_users).then(actions.log_state);
     return {};
   };
@@ -1392,10 +1464,10 @@ var user_select = exports.user_select = function user_select(user_id) {
     var uu = state.users.filter(function (u) {
       return u.id == user_id;
     })[0];
-    return { user: { id: uu.id, email: uu.email } };
+    return { user: uu };
   };
 };
-},{"debounce-promise":"node_modules/debounce-promise/dist/index.js","./api":"src/actions/api.js"}],"src/actions/actions.js":[function(require,module,exports) {
+},{"debounce-promise":"node_modules/debounce-promise/dist/index.js","./api":"src/actions/api.js","./download_xml":"src/actions/download_xml.js"}],"src/actions/actions.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1529,7 +1601,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '55830' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50552' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
